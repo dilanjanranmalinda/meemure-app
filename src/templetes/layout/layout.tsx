@@ -2,8 +2,14 @@ import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Navbar from "../../components/navbar/navbar";
 import backgroundImage from "../../accets/navbarImage.jpg";
+import tiktok from "../../accets/tiktok.svg";
 import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
+import IconButton from "@material-ui/core/IconButton";
+import { Facebook, Instagram, YouTube } from "@material-ui/icons";
+import Booking from "../../pages/Booking/Booking";
+import Slideshow from "../../pages/slideshow/slideshow";
+import Packages from "../../pages/Packages/Packages";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -13,11 +19,11 @@ const useStyles = makeStyles((theme) => ({
   title: {
     fontWeight: 600,
     // fontSize: 48,
-    marginLeft: "10%",
+    marginLeft: "5%",
     marginBottom: theme.spacing(2),
   },
   slogan: {
-    marginLeft: "13%",
+    marginLeft: "100px",
     fontWeight: 400,
     // fontSize: 24,
     marginBottom: theme.spacing(4),
@@ -41,7 +47,7 @@ function Layout() {
             height: "80vh",
           }}
         >
-          <Box>
+          <Box id="navbar">
             <Navbar />
           </Box>
 
@@ -52,10 +58,10 @@ function Layout() {
             style={{ marginTop: "15%" }}
           >
             <Typography variant="h2" className={classes.title}>
-              Your Website Title
+              Meemure Village
             </Typography>
             <Typography variant="h4" className={classes.slogan}>
-              Your Website Slogan Here
+              "Discover the Beauty of Nature"
             </Typography>
 
             <Grid
@@ -65,36 +71,73 @@ function Layout() {
               style={{ marginTop: "10%" }}
             >
               <Grid item>
-                <Typography variant="body1">Youtube link</Typography>
+                <IconButton aria-label="youtube">
+                  <a
+                    href="#"
+                    style={{ textDecoration: "none", color: "white" }}
+                  >
+                    <YouTube style={{ fontSize: "2rem" }} />
+                  </a>
+                </IconButton>
               </Grid>
               <Grid item>
-                <Typography variant="body1">Facebook link</Typography>
+                <IconButton aria-label="facebook">
+                  <a
+                    href="#"
+                    style={{ textDecoration: "none", color: "white" }}
+                  >
+                    <Facebook style={{ fontSize: "2rem" }} />
+                  </a>
+                </IconButton>
+              </Grid>
+              <Grid item>
+                <IconButton aria-label="facebook">
+                  <a
+                    href="#"
+                    style={{ textDecoration: "none", color: "white" }}
+                  >
+                    <img src={tiktok} width="32px" height="32px" />
+                  </a>
+                </IconButton>
+              </Grid>
+              <Grid item>
+                <IconButton aria-label="facebook">
+                  <a
+                    href="#"
+                    style={{ textDecoration: "none", color: "white" }}
+                  >
+                    <Instagram style={{ fontSize: "2rem" }} />
+                  </a>
+                </IconButton>
               </Grid>
             </Grid>
           </Box>
         </Grid>
 
         <Grid container style={{ margin: "0 20px" }}>
-          {/* Packages */}
+          {/* slidshow */}
           <Grid item xs={12}>
-            {/* <Packages /> */}
-            <h1>Packages</h1>
+            <Slideshow />
+          </Grid>
+
+          {/* Packages */}
+          <Grid item xs={12} id="packages">
+            <Packages />
           </Grid>
 
           {/* Booking */}
-          <Grid item xs={12}>
-            {/* <Booking /> */}
-            <h1>Booking</h1>
+          <Grid item xs={12} id="booking">
+            <Booking />
           </Grid>
 
           {/* Contact */}
-          <Grid item xs={12}>
+          <Grid item xs={12} id="contact">
             {/* <Contact /> */}
             <h1>Contact</h1>
           </Grid>
 
           {/* About */}
-          <Grid item xs={12}>
+          <Grid item xs={12} id="about">
             {/* <About /> */}
             <h1>About</h1>
           </Grid>
