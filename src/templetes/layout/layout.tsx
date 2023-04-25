@@ -1,7 +1,5 @@
-import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Navbar from "../../components/navbar/navbar";
-import backgroundImage from "../../accets/navbarImage.jpg";
 import tiktok from "../../accets/tiktok.svg";
 import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
@@ -11,42 +9,11 @@ import Booking from "../../pages/Booking/Booking";
 import Slideshow from "../../pages/slideshow/slideshow";
 import Packages from "../../pages/Packages/Packages";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-    padding: theme.spacing(2),
-  },
-  title: {
-    fontWeight: 600,
-    // fontSize: 48,
-    marginLeft: "5%",
-    marginBottom: theme.spacing(2),
-  },
-  slogan: {
-    marginLeft: "100px",
-    fontWeight: 400,
-    // fontSize: 24,
-    marginBottom: theme.spacing(4),
-  },
-}));
-
 function Layout() {
-  const classes = useStyles();
   return (
-    <div className={classes.root}>
-      <Grid container spacing={2}>
-        <Grid
-          container
-          direction="column"
-          style={{
-            backgroundImage: `url(${backgroundImage})`,
-            backgroundSize: "cover",
-            backgroundPosition: "10% 25%",
-            backgroundRepeat: "no-repeat",
-            flex: 1,
-            height: "80vh",
-          }}
-        >
+    <div className="root">
+      <Grid container>
+        <Grid container direction="column" className="background-image">
           <Box id="navbar">
             <Navbar />
           </Box>
@@ -57,17 +24,16 @@ function Layout() {
             justifyContent="center"
             style={{ marginTop: "15%" }}
           >
-            <Typography variant="h2" className={classes.title}>
+            <Typography variant="h2" className="title">
               Meemure Village
             </Typography>
-            <Typography variant="h4" className={classes.slogan}>
+            <Typography variant="h4" className="slogan">
               "Discover the Beauty of Nature"
             </Typography>
 
             <Grid
               container
               justifyContent="center"
-              spacing={2}
               style={{ marginTop: "10%" }}
             >
               <Grid item>
@@ -114,10 +80,10 @@ function Layout() {
           </Box>
         </Grid>
 
-        <Grid container style={{ margin: "0 20px" }}>
+        <Grid container style={{ margin: "20px 20px" }}>
           {/* slidshow */}
           <Grid item xs={12}>
-            <Slideshow />
+            {/* <Slideshow /> */}
           </Grid>
 
           {/* Packages */}

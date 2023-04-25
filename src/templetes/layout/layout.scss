@@ -1,0 +1,22 @@
+.root {
+  flex-grow: 1;
+  // margin: 0;
+
+  .title {
+    font-weight: bold;
+    margin-left: 5%;
+  }
+
+  .slogan {
+    margin-left: 100px;
+  }
+
+  .background-image {
+    background-image: url("../../accets/navbarImage.jpg");
+    background-size: cover;
+    background-position: 10% 25%;
+    background-repeat: no-repeat;
+    flex: 1;
+    height: 80vh;
+  }
+}

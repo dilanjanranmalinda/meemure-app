@@ -1,4 +1,3 @@
-import { useTheme } from "@material-ui/core";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import "./App.scss";
@@ -16,16 +15,15 @@ const darkBlueTheme = createTheme({
   },
 });
 
-function MyApp() {
-  const theme = useTheme();
-
+function App() {
   return (
     <ThemeProvider theme={darkBlueTheme}>
       <CssBaseline />
-
-      <Layout />
+      <div className="App">
+        <Layout />
+      </div>
     </ThemeProvider>
   );
 }
 
-export default MyApp;
+export default App;
