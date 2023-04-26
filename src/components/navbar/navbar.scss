@@ -1,36 +1,9 @@
-$transparent: transparent;
-$none: none;
 $md: 960px;
 $rgba: rgba(0, 0, 0, 0.1);
 $white: #fff;
 
-.navbar-root {
-  flex-grow: 1;
-}
-
-.appBar {
-  background-color: $transparent;
-  box-shadow: $none;
-}
-
-.menuButton {
-  margin-right: 16px;
-  @media (min-width: #{$md}) {
-    display: none;
-  }
-}
-
-.toolbar {
-  display: flex;
-  justify-content: center;
-}
-
 .drawer {
-  width: 200px;
-}
-
-.drawerPaper {
-  width: 200px;
+  width: 150px;
 }
 
 .navLink {

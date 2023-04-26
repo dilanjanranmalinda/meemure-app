@@ -9,6 +9,7 @@ import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import { AiOutlineMenu } from "react-icons/ai";
 import Drawer from "@mui/material/Drawer";
+import Box from "@mui/material/Box";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
@@ -26,18 +27,20 @@ function Navbar() {
   ];
 
   const navLinksMarkup = navLinks.map((navLink) => (
-    <Link
-      key={navLink.title}
-      activeClass="active"
-      to={navLink.target}
-      spy={true}
-      smooth={true}
-      offset={-70}
-      duration={500}
-      className="navLink"
-    >
-      {navLink.title}
-    </Link>
+    <Box sx={{ flexGrow: 1, display: { xs: "none", md: "contents" } }}>
+      <Link
+        key={navLink.title}
+        activeClass="active"
+        to={navLink.target}
+        spy={true}
+        smooth={true}
+        offset={-70}
+        duration={500}
+        className="navLink"
+      >
+        {navLink.title}
+      </Link>
+    </Box>
   ));
 
   const drawerMarkup = (
@@ -48,7 +51,7 @@ function Navbar() {
     >
       <List>
         {navLinks.map((navLink) => (
-          <ListItem button key={navLink.title}>
+          <ListItem key={navLink.title}>
             <Link
               activeClass="active"
               to={navLink.target}
@@ -56,7 +59,6 @@ function Navbar() {
               smooth={true}
               offset={-70}
               duration={500}
-              className="navLink"
             >
               <ListItemText primary={navLink.title} />
             </Link>
@@ -68,25 +70,27 @@ function Navbar() {
 
   return (
     <div className="navbar-root">
-      <AppBar position="fixed" className="appBar">
-        <Toolbar className="toolbar">
+      <AppBar
+        position="fixed"
+        sx={{ boxShadow: "none", background: "rgba(0,0,0,0.1)" }}
+      >
+        <Toolbar
+          sx={{ display: "flex", justifyContent: { xs: "none", md: "center" } }}
+        >
           <IconButton
             edge="start"
             className="menuButton"
             color="inherit"
             aria-label="menu"
             onClick={() => toggleDrawer()}
+            sx={{ display: { xs: "block", md: "none" } }}
           >
             <AiOutlineMenu />
           </IconButton>
           {navLinksMarkup}
         </Toolbar>
       </AppBar>
-      <Drawer
-        open={open}
-        onClose={() => toggleDrawer()}
-        classes={{ paper: "drawerPaper" }}
-      >
+      <Drawer open={open} onClose={() => toggleDrawer()}>
         {drawerMarkup}
       </Drawer>
     </div>

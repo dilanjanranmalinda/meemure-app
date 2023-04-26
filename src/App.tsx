@@ -1,4 +1,8 @@
-import { ThemeProvider, createTheme } from "@mui/material/styles";
+import {
+  ThemeProvider,
+  createTheme,
+  responsiveFontSizes,
+} from "@mui/material/styles";
 import "./App.scss";
 import { BG_COLOR, PAPER_COLOR } from "./accets/app-constants";
 import Layout from "./templetes/layout/layout";
@@ -21,9 +25,11 @@ const darkBlueTheme = createTheme({
   },
 });
 
+const theme = responsiveFontSizes(darkBlueTheme);
+
 function App() {
   return (
-    <ThemeProvider theme={darkBlueTheme}>
+    <ThemeProvider theme={theme}>
       <CssBaseline />
       <div className="App">
         <Layout />

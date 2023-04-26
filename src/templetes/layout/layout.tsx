@@ -39,44 +39,23 @@ function Layout() {
               style={{ marginTop: "10%" }}
             >
               <Grid item>
-                <IconButton aria-label="youtube">
-                  <a
-                    href="#"
-                    style={{ textDecoration: "none", color: "white" }}
-                  >
-                    <FaYoutube size={30} />
-                  </a>
+                <IconButton aria-label="youtube" href="#">
+                  <FaYoutube size={30} />
                 </IconButton>
               </Grid>
               <Grid item>
-                <IconButton aria-label="facebook">
-                  <a
-                    href="#"
-                    style={{ textDecoration: "none", color: "white" }}
-                  >
-                    <GrFacebookOption style={{ fontSize: "2rem" }} />
-                  </a>
+                <IconButton aria-label="facebook" href="#">
+                  <GrFacebookOption style={{ fontSize: "2rem" }} />
                 </IconButton>
               </Grid>
               <Grid item>
-                <IconButton aria-label="facebook">
-                  <a
-                    href="#"
-                    style={{ textDecoration: "none", color: "white" }}
-                  >
-                    <FaTiktok size={30} />
-                    {/* <img src={tiktok} width="32px" height="32px" /> */}
-                  </a>
+                <IconButton aria-label="tiktok" href="#">
+                  <FaTiktok size={30} />
                 </IconButton>
               </Grid>
               <Grid item>
-                <IconButton aria-label="facebook">
-                  <a
-                    href="#"
-                    style={{ textDecoration: "none", color: "white" }}
-                  >
-                    <GrInstagram size={30} />
-                  </a>
+                <IconButton aria-label="instagram" href="#">
+                  <GrInstagram size={30} />
                 </IconButton>
               </Grid>
             </Grid>
