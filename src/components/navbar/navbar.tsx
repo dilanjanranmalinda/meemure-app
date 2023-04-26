@@ -1,57 +1,16 @@
-import React, { useState } from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
-import Drawer from "@material-ui/core/Drawer";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
+import { useState } from "react";
 import { Link } from "react-scroll";
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  appBar: {
-    backgroundColor: "transparent",
-    boxShadow: "none",
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-    [theme.breakpoints.up("md")]: {
-      display: "none",
-    },
-  },
-
-  toolbar: {
-    display: "flex",
-    justifyContent: "center",
-  },
-
-  drawer: {
-    width: 200,
-  },
-  drawerPaper: {
-    width: 200,
-  },
-  navLink: {
-    backgroundColor: "rgba(0, 0, 0, 0.1)",
-    margin: "0 30px",
-    padding: "2px 10px",
-    borderRadius: "20px",
-    color: "#fff",
-    textDecoration: "none",
-    marginRight: theme.spacing(2),
-    "&:hover": {
-      boxShadow: "0 0 10px rgba(255, 255, 255, 0.8)",
-    },
-  },
-}));
+import "./navbar.scss";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemText from "@mui/material/ListItemText";
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import IconButton from "@mui/material/IconButton";
+import { AiOutlineMenu } from "react-icons/ai";
+import Drawer from "@mui/material/Drawer";
 
 function Navbar() {
-  const classes = useStyles();
   const [open, setOpen] = useState(false);
 
   const toggleDrawer = () => {
@@ -75,7 +34,7 @@ function Navbar() {
       smooth={true}
       offset={-70}
       duration={500}
-      className={classes.navLink}
+      className="navLink"
     >
       {navLink.title}
     </Link>
@@ -83,7 +42,7 @@ function Navbar() {
 
   const drawerMarkup = (
     <div
-      className={classes.drawer}
+      className="drawer"
       onClick={() => toggleDrawer()}
       onKeyDown={() => toggleDrawer()}
     >
@@ -97,7 +56,7 @@ function Navbar() {
               smooth={true}
               offset={-70}
               duration={500}
-              className={classes.navLink}
+              className="navLink"
             >
               <ListItemText primary={navLink.title} />
             </Link>
@@ -108,17 +67,17 @@ function Navbar() {
   );
 
   return (
-    <div className={classes.root}>
-      <AppBar position="fixed" className={classes.appBar}>
-        <Toolbar className={classes.toolbar}>
+    <div className="navbar-root">
+      <AppBar position="fixed" className="appBar">
+        <Toolbar className="toolbar">
           <IconButton
             edge="start"
-            className={classes.menuButton}
+            className="menuButton"
             color="inherit"
             aria-label="menu"
             onClick={() => toggleDrawer()}
           >
-            <MenuIcon />
+            <AiOutlineMenu />
           </IconButton>
           {navLinksMarkup}
         </Toolbar>
@@ -126,7 +85,7 @@ function Navbar() {
       <Drawer
         open={open}
         onClose={() => toggleDrawer()}
-        classes={{ paper: classes.drawerPaper }}
+        classes={{ paper: "drawerPaper" }}
       >
         {drawerMarkup}
       </Drawer>

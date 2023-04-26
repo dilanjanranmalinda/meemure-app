@@ -1,15 +1,15 @@
-import Grid from "@material-ui/core/Grid";
-import Navbar from "../../components/navbar/navbar";
-import tiktok from "../../accets/tiktok.svg";
-import Box from "@material-ui/core/Box";
-import Typography from "@material-ui/core/Typography";
-import IconButton from "@material-ui/core/IconButton";
-import { Facebook, Instagram, YouTube } from "@material-ui/icons";
 import Booking from "../../pages/Booking/Booking";
 import Slideshow from "../../pages/slideshow/slideshow";
 import Packages from "../../pages/Packages/Packages";
-import "./layout.scss";
 import SandBox from "../../components/sandbox";
+import "./layout.scss";
+import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
+import Navbar from "../../components/navbar/navbar";
+import Typography from "@mui/material/Typography";
+import IconButton from "@mui/material/IconButton";
+import { FaTiktok, FaYoutube } from "react-icons/fa";
+import { GrInstagram, GrFacebookOption } from "react-icons/gr";
 
 function Layout() {
   return (
@@ -44,7 +44,7 @@ function Layout() {
                     href="#"
                     style={{ textDecoration: "none", color: "white" }}
                   >
-                    <YouTube style={{ fontSize: "2rem" }} />
+                    <FaYoutube size={30} />
                   </a>
                 </IconButton>
               </Grid>
@@ -54,7 +54,7 @@ function Layout() {
                     href="#"
                     style={{ textDecoration: "none", color: "white" }}
                   >
-                    <Facebook style={{ fontSize: "2rem" }} />
+                    <GrFacebookOption style={{ fontSize: "2rem" }} />
                   </a>
                 </IconButton>
               </Grid>
@@ -64,7 +64,8 @@ function Layout() {
                     href="#"
                     style={{ textDecoration: "none", color: "white" }}
                   >
-                    <img src={tiktok} width="32px" height="32px" />
+                    <FaTiktok size={30} />
+                    {/* <img src={tiktok} width="32px" height="32px" /> */}
                   </a>
                 </IconButton>
               </Grid>
@@ -74,7 +75,7 @@ function Layout() {
                     href="#"
                     style={{ textDecoration: "none", color: "white" }}
                   >
-                    <Instagram style={{ fontSize: "2rem" }} />
+                    <GrInstagram size={30} />
                   </a>
                 </IconButton>
               </Grid>
