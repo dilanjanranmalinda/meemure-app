@@ -8,6 +8,8 @@ import { Facebook, Instagram, YouTube } from "@material-ui/icons";
 import Booking from "../../pages/Booking/Booking";
 import Slideshow from "../../pages/slideshow/slideshow";
 import Packages from "../../pages/Packages/Packages";
+import "./layout.scss";
+import SandBox from "../../components/sandbox";
 
 function Layout() {
   return (
@@ -81,30 +83,26 @@ function Layout() {
         </Grid>
 
         <Grid container style={{ margin: "20px 20px" }}>
-          {/* slidshow */}
           <Grid item xs={12}>
             {/* <Slideshow /> */}
           </Grid>
 
-          {/* Packages */}
           <Grid item xs={12} id="packages">
+            <h1>Packages</h1>
+
             <Packages />
           </Grid>
 
-          {/* Booking */}
           <Grid item xs={12} id="booking">
-            <Booking />
+            <h1>Booking</h1>
+            {/* <Booking /> */}
           </Grid>
 
-          {/* Contact */}
           <Grid item xs={12} id="contact">
-            {/* <Contact /> */}
             <h1>Contact</h1>
           </Grid>
 
-          {/* About */}
           <Grid item xs={12} id="about">
-            {/* <About /> */}
             <h1>About</h1>
           </Grid>
         </Grid>

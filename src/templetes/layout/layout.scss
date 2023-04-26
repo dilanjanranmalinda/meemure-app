@@ -12,7 +12,12 @@
   }
 
   .background-image {
-    background-image: url("../../accets/navbarImage.jpg");
+    background-image: linear-gradient(
+        to bottom,
+        rgba(1, 45, 46, 0),
+        rgba(1, 45, 46, 1)
+      ),
+      url("../../accets/navbarImage.jpg");
     background-size: cover;
     background-position: 10% 25%;
     background-repeat: no-repeat;
