@@ -1,52 +1,21 @@
-import { makeStyles } from "@material-ui/core/styles";
-import Grid from "@material-ui/core/Grid";
-import Navbar from "../../components/navbar/navbar";
-import backgroundImage from "../../accets/navbarImage.jpg";
-import tiktok from "../../accets/tiktok.svg";
-import Box from "@material-ui/core/Box";
-import Typography from "@material-ui/core/Typography";
-import IconButton from "@material-ui/core/IconButton";
-import { Facebook, Instagram, YouTube } from "@material-ui/icons";
 import Booking from "../../pages/Booking/Booking";
 import Slideshow from "../../pages/slideshow/slideshow";
 import Packages from "../../pages/Packages/Packages";
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-    padding: theme.spacing(2),
-  },
-  title: {
-    fontWeight: 600,
-    // fontSize: 48,
-    marginLeft: "5%",
-    marginBottom: theme.spacing(2),
-  },
-  slogan: {
-    marginLeft: "100px",
-    fontWeight: 400,
-    // fontSize: 24,
-    marginBottom: theme.spacing(4),
-  },
-}));
+import SandBox from "../../components/sandbox";
+import "./layout.scss";
+import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
+import Navbar from "../../components/navbar/navbar";
+import Typography from "@mui/material/Typography";
+import IconButton from "@mui/material/IconButton";
+import { FaTiktok, FaYoutube } from "react-icons/fa";
+import { GrInstagram, GrFacebookOption } from "react-icons/gr";
 
 function Layout() {
-  const classes = useStyles();
   return (
-    <div className={classes.root}>
-      <Grid container spacing={2}>
-        <Grid
-          container
-          direction="column"
-          style={{
-            backgroundImage: `url(${backgroundImage})`,
-            backgroundSize: "cover",
-            backgroundPosition: "10% 25%",
-            backgroundRepeat: "no-repeat",
-            flex: 1,
-            height: "80vh",
-          }}
-        >
+    <div className="root">
+      <Grid container>
+        <Grid container direction="column" className="background-image">
           <Box id="navbar">
             <Navbar />
           </Box>
@@ -57,89 +26,64 @@ function Layout() {
             justifyContent="center"
             style={{ marginTop: "15%" }}
           >
-            <Typography variant="h2" className={classes.title}>
-              Meemure Village
+            <Typography variant="h2" className="title" textAlign="center">
+              Meemure Village Camping Site
             </Typography>
-            <Typography variant="h4" className={classes.slogan}>
+            <Typography variant="h4" textAlign="center">
               "Discover the Beauty of Nature"
             </Typography>
 
             <Grid
               container
               justifyContent="center"
-              spacing={2}
               style={{ marginTop: "10%" }}
             >
               <Grid item>
-                <IconButton aria-label="youtube">
-                  <a
-                    href="#"
-                    style={{ textDecoration: "none", color: "white" }}
-                  >
-                    <YouTube style={{ fontSize: "2rem" }} />
-                  </a>
+                <IconButton aria-label="youtube" href="#">
+                  <FaYoutube size={30} />
                 </IconButton>
               </Grid>
               <Grid item>
-                <IconButton aria-label="facebook">
-                  <a
-                    href="#"
-                    style={{ textDecoration: "none", color: "white" }}
-                  >
-                    <Facebook style={{ fontSize: "2rem" }} />
-                  </a>
+                <IconButton aria-label="facebook" href="#">
+                  <GrFacebookOption style={{ fontSize: "2rem" }} />
                 </IconButton>
               </Grid>
               <Grid item>
-                <IconButton aria-label="facebook">
-                  <a
-                    href="#"
-                    style={{ textDecoration: "none", color: "white" }}
-                  >
-                    <img src={tiktok} width="32px" height="32px" />
-                  </a>
+                <IconButton aria-label="tiktok" href="#">
+                  <FaTiktok size={30} />
                 </IconButton>
               </Grid>
               <Grid item>
-                <IconButton aria-label="facebook">
-                  <a
-                    href="#"
-                    style={{ textDecoration: "none", color: "white" }}
-                  >
-                    <Instagram style={{ fontSize: "2rem" }} />
-                  </a>
+                <IconButton aria-label="instagram" href="#">
+                  <GrInstagram size={30} />
                 </IconButton>
               </Grid>
             </Grid>
           </Box>
         </Grid>
 
-        <Grid container style={{ margin: "0 20px" }}>
-          {/* slidshow */}
+        <Grid container spacing={2} mt={5}>
           <Grid item xs={12}>
             <Slideshow />
           </Grid>
+          <Grid container spacing={2} mx={{ xs: 4, md: 10 }} mt={5}>
+            <Grid item xs={12} id="packages">
+              <Typography variant="h3">Packages</Typography>
+              <Packages />
+            </Grid>
 
-          {/* Packages */}
-          <Grid item xs={12} id="packages">
-            <Packages />
-          </Grid>
+            <Grid item xs={12} id="booking">
+              <Typography variant="h3">Booking</Typography>
+              <Booking />
+            </Grid>
 
-          {/* Booking */}
-          <Grid item xs={12} id="booking">
-            <Booking />
-          </Grid>
+            <Grid item xs={12} id="contact">
+              <h1>Contact</h1>
+            </Grid>
 
-          {/* Contact */}
-          <Grid item xs={12} id="contact">
-            {/* <Contact /> */}
-            <h1>Contact</h1>
-          </Grid>
-
-          {/* About */}
-          <Grid item xs={12} id="about">
-            {/* <About /> */}
-            <h1>About</h1>
+            <Grid item xs={12} id="about">
+              <h1>About</h1>
+            </Grid>
           </Grid>
         </Grid>
       </Grid>

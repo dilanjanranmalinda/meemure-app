@@ -1,31 +1,41 @@
-import { useTheme } from "@material-ui/core";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
-import CssBaseline from "@mui/material/CssBaseline";
+import {
+  ThemeProvider,
+  createTheme,
+  responsiveFontSizes,
+} from "@mui/material/styles";
 import "./App.scss";
+import { BG_COLOR, PAPER_COLOR } from "./accets/app-constants";
 import Layout from "./templetes/layout/layout";
+import CssBaseline from "@mui/material/CssBaseline";
+import "@fontsource/roboto/300.css";
+import "@fontsource/roboto/400.css";
+import "@fontsource/roboto/500.css";
+import "@fontsource/roboto/700.css";
 
 const darkBlueTheme = createTheme({
   palette: {
     mode: "dark",
     primary: {
-      main: "#1976d2",
+      main: "#023c3e",
     },
     background: {
-      default: "#0d253f",
+      default: BG_COLOR,
+      paper: PAPER_COLOR,
     },
   },
 });
 
-function MyApp() {
-  const theme = useTheme();
+const theme = responsiveFontSizes(darkBlueTheme);
 
+function App() {
   return (
-    <ThemeProvider theme={darkBlueTheme}>
+    <ThemeProvider theme={theme}>
       <CssBaseline />
-
-      <Layout />
+      <div className="App">
+        <Layout />
+      </div>
     </ThemeProvider>
   );
 }
 
-export default MyApp;
+export default App;

@@ -1,75 +1,24 @@
+import Button from "@mui/material/Button";
+import Checkbox from "@mui/material/Checkbox";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import TextField from "@mui/material/TextField";
 import React from "react";
 import { useForm, Controller } from "react-hook-form";
-// import DateFnsUtils from "@date-io/date-fns";
-import {
-  MuiPickersUtilsProvider,
-  KeyboardDatePicker,
-} from "@material-ui/pickers";
-
-import {
-  TextField,
-  FormControl,
-  InputLabel,
-  Select,
-  MenuItem,
-  Checkbox,
-  FormControlLabel,
-  Button,
-  makeStyles,
-  Theme,
-  createStyles,
-} from "@material-ui/core";
-import Autocomplete from "@mui/material/Autocomplete";
 
 // Define the form inputs as a TypeScript interface
 interface FormInputs {
   name: string;
   phone: string;
   email: string;
+  address: string;
   passengerCount: number;
   package: string;
   bookingDate: string;
   additionalFeatures: boolean;
 }
 
-// Define the packages data as an array of objects
-const packages = [
-  {
-    value: "package1",
-    label: "Package 1",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
-  {
-    value: "package2",
-    label: "Package 2",
-    description:
-      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  },
-  {
-    value: "package3",
-    label: "Package 3",
-    description:
-      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-  },
-];
-
-// Define the styles for the form
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    formControl: {
-      minWidth: 120,
-      marginBottom: theme.spacing(2),
-    },
-    button: {
-      marginTop: theme.spacing(2),
-    },
-  })
-);
-
 // Define the BookingForm component
 const BookingForm: React.FC = () => {
-  const classes = useStyles();
   const {
     control,
     handleSubmit,
@@ -82,7 +31,7 @@ const BookingForm: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)} style={{ marginTop: "20px" }}>
       <Controller
         name="name"
         control={control}
@@ -91,6 +40,7 @@ const BookingForm: React.FC = () => {
         render={({ field }) => (
           <TextField
             {...field}
+            style={{ marginBottom: "2rem" }}
             label="Name"
             variant="outlined"
             fullWidth
@@ -113,6 +63,7 @@ const BookingForm: React.FC = () => {
         render={({ field }) => (
           <TextField
             {...field}
+            style={{ marginBottom: "2rem" }}
             label="Phone"
             variant="outlined"
             fullWidth
@@ -135,6 +86,7 @@ const BookingForm: React.FC = () => {
         render={({ field }) => (
           <TextField
             {...field}
+            style={{ marginBottom: "2rem" }}
             label="Email"
             variant="outlined"
             fullWidth
@@ -150,6 +102,7 @@ const BookingForm: React.FC = () => {
         rules={{ required: "Passenger count is required" }}
         render={({ field }) => (
           <TextField
+            style={{ marginBottom: "2rem" }}
             {...field}
             type="number"
             label="Passenger Count"
@@ -161,31 +114,25 @@ const BookingForm: React.FC = () => {
         )}
       />
 
-      {/* <Controller
-        name="bookingDate"
+      <Controller
+        name="address"
         control={control}
-        defaultValue={String(new Date())}
-        rules={{ required: "Booking date is required" }}
+        defaultValue=""
+        rules={{ required: "Address is required" }}
         render={({ field }) => (
-          <MuiPickersUtilsProvider utils={DateFnsUtils}>
-            <KeyboardDatePicker
-              {...field}
-              disableToolbar
-              variant="inline"
-              format="MM/dd/yyyy"
-              margin="normal"
-              label="Booking Date"
-              value={field.value}
-              onChange={(date) => field.onChange(date)}
-              KeyboardButtonProps={{
-                "aria-label": "change date",
-              }}
-              error={!!errors.bookingDate}
-              helperText={errors.bookingDate?.message}
-            />
-          </MuiPickersUtilsProvider>
+          <TextField
+            {...field}
+            label="Address"
+            variant="outlined"
+            fullWidth
+            style={{ marginBottom: "2rem" }}
+            multiline
+            minRows={4}
+            error={!!errors.address}
+            helperText={errors.address?.message}
+          />
         )}
-      /> */}
+      />
 
       <FormControlLabel
         control={
