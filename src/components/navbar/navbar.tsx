@@ -7,7 +7,7 @@ import ListItemText from "@mui/material/ListItemText";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
-import { AiOutlineMenu } from "react-icons/ai";
+import { AiOutlineMenu, AiOutlineMenuFold } from "react-icons/ai";
 import Drawer from "@mui/material/Drawer";
 import Box from "@mui/material/Box";
 
@@ -27,7 +27,10 @@ function Navbar() {
   ];
 
   const navLinksMarkup = navLinks.map((navLink) => (
-    <Box sx={{ flexGrow: 1, display: { xs: "none", md: "contents" } }}>
+    <Box
+      key={navLink.title}
+      sx={{ flexGrow: 1, display: { xs: "none", md: "contents" } }}
+    >
       <Link
         key={navLink.title}
         activeClass="active"
@@ -44,12 +47,16 @@ function Navbar() {
   ));
 
   const drawerMarkup = (
-    <div
-      className="drawer"
-      onClick={() => toggleDrawer()}
-      onKeyDown={() => toggleDrawer()}
-    >
+    <div className="drawer" onClick={toggleDrawer} onKeyDown={toggleDrawer}>
       <List>
+        <ListItem>
+          Logo
+          <AiOutlineMenuFold
+            style={{ marginLeft: "4rem", marginBottom: "1rem" }}
+            onClick={toggleDrawer}
+            size={20}
+          />
+        </ListItem>
         {navLinks.map((navLink) => (
           <ListItem key={navLink.title}>
             <Link

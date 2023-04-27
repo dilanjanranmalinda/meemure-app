@@ -1,8 +1,11 @@
 import React from "react";
-import { Box, Grid, Paper, Typography } from "@material-ui/core";
 import BookingCalendar from "../../components/bookingCalender/BookingCalender";
 import BookingForm from "../../components/bookingForm/bookingForm";
 import "./booking.scss";
+import Box from "@mui/material/Box";
+import Grid from "@mui/material/Grid";
+import Paper from "@mui/material/Paper";
+import Typography from "@mui/material/Typography";
 
 const Booking = () => {
   const [date, setDate] = React.useState(new Date());
@@ -13,20 +16,21 @@ const Booking = () => {
 
   return (
     <Box className="booking-root">
-      <Grid container spacing={3}>
+      <Grid container spacing={2}>
         <Grid item xs={12} md={6}>
-          <Paper className="paper">
-            <Typography variant="h5">Choose a date</Typography>
+          <Paper className="calendar">
+            <Typography variant="h5">Booked Dates</Typography>
             <Box my={3}>
               <BookingCalendar />
             </Box>
             <Typography variant="subtitle1">
-              Selected date: {date.toDateString()}
+              Today: {date.toDateString()}
             </Typography>
           </Paper>
         </Grid>
         <Grid item xs={12} md={6}>
-          <Paper className="paper">
+          <Paper className="booking-paper">
+            <Typography variant="h5">Camping Application</Typography>
             <BookingForm />
           </Paper>
         </Grid>

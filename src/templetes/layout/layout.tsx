@@ -26,10 +26,10 @@ function Layout() {
             justifyContent="center"
             style={{ marginTop: "15%" }}
           >
-            <Typography variant="h2" className="title">
-              Meemure Village
+            <Typography variant="h2" className="title" textAlign="center">
+              Meemure Village Camping Site
             </Typography>
-            <Typography variant="h4" className="slogan">
+            <Typography variant="h4" textAlign="center">
               "Discover the Beauty of Nature"
             </Typography>
 
@@ -62,28 +62,28 @@ function Layout() {
           </Box>
         </Grid>
 
-        <Grid container style={{ margin: "20px 20px" }}>
+        <Grid container spacing={2} mt={5}>
           <Grid item xs={12}>
-            {/* <Slideshow /> */}
+            <Slideshow />
           </Grid>
+          <Grid container spacing={2} mx={{ xs: 4, md: 10 }} mt={5}>
+            <Grid item xs={12} id="packages">
+              <Typography variant="h3">Packages</Typography>
+              <Packages />
+            </Grid>
 
-          <Grid item xs={12} id="packages">
-            <h1>Packages</h1>
+            <Grid item xs={12} id="booking">
+              <Typography variant="h3">Booking</Typography>
+              <Booking />
+            </Grid>
 
-            <Packages />
-          </Grid>
+            <Grid item xs={12} id="contact">
+              <h1>Contact</h1>
+            </Grid>
 
-          <Grid item xs={12} id="booking">
-            <h1>Booking</h1>
-            {/* <Booking /> */}
-          </Grid>
-
-          <Grid item xs={12} id="contact">
-            <h1>Contact</h1>
-          </Grid>
-
-          <Grid item xs={12} id="about">
-            <h1>About</h1>
+            <Grid item xs={12} id="about">
+              <h1>About</h1>
+            </Grid>
           </Grid>
         </Grid>
       </Grid>

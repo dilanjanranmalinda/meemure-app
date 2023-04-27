@@ -1,8 +1,8 @@
 .booking-root {
-  padding: 3 rem;
+  margin-top: 2rem;
 
-  .paper {
-    padding: 3 rem;
+  .booking-paper {
+    padding: 1rem;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     transition: box-shadow 0.3s ease;
@@ -13,6 +13,7 @@
   }
 
   .calendar {
+    padding: 1rem;
     width: 100%;
     border: none;
 

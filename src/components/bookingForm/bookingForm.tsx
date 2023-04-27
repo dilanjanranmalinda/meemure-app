@@ -1,12 +1,9 @@
+import Button from "@mui/material/Button";
+import Checkbox from "@mui/material/Checkbox";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import TextField from "@mui/material/TextField";
 import React from "react";
 import { useForm, Controller } from "react-hook-form";
-
-import {
-  TextField,
-  Checkbox,
-  FormControlLabel,
-  Button,
-} from "@material-ui/core";
 
 // Define the form inputs as a TypeScript interface
 interface FormInputs {
@@ -34,7 +31,7 @@ const BookingForm: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)} style={{ marginTop: "20px" }}>
       <Controller
         name="name"
         control={control}
