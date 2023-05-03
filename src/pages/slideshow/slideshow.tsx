@@ -45,7 +45,7 @@ const Slideshow: React.FC = () => {
         transitionTime={500}
       >
         {videos.map(({ id, title, description }) => (
-          <div key={id}>
+          <Box key={id}>
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
                 <Box className="videoWrapper">
@@ -76,7 +76,7 @@ const Slideshow: React.FC = () => {
                 </Box>
               </Grid>
             </Grid>
-          </div>
+          </Box>
         ))}
       </Carousel>
     </Box>
