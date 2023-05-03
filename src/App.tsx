@@ -11,7 +11,8 @@ import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
-
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 const darkBlueTheme = createTheme({
   palette: {
     mode: "dark",
@@ -31,9 +32,11 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <div className="App">
-        <Layout />
-      </div>
+      <LocalizationProvider dateAdapter={AdapterDayjs}>
+        <div className="App">
+          <Layout />
+        </div>
+      </LocalizationProvider>
     </ThemeProvider>
   );
 }
