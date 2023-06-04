@@ -55,8 +55,14 @@ const Packages = () => {
       title: "One Day",
       foriegnPrice: "Per person $50.00",
       localPrice: "Per person Rs.2800.00",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      items: ["Item 1", "Item 2", "Item 3"],
+      description:
+        "We give you Beakfast,Lunch and Evining tea with tarditional sweets and also traditional food (Veli thalapa or kithul thalapa). You can select one place to travel.",
+      items: [
+        "Little Worldend and 7falls",
+        "Naa Ela Wdilunu guhava",
+        "Meemure Suriya Arana falls",
+        "Meemure falls",
+      ],
     },
     {
       title: "Two Days",
