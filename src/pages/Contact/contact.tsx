@@ -1,0 +1,5 @@
+const contact = [{
+
+}]
+
+export{contact}
