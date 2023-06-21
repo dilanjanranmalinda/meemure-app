@@ -1,7 +1,6 @@
 import Booking from "../../pages/Booking/Booking";
 import Slideshow from "../../pages/slideshow/slideshow";
 import Packages from "../../pages/Packages/Packages";
-import SandBox from "../../components/sandbox";
 import "./layout.scss";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
