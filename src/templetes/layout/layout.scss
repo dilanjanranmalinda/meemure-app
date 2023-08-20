@@ -13,8 +13,10 @@
   .background-image {
     background-image: linear-gradient(
         to bottom,
-        rgba(1, 45, 46, 0),
-        rgba(1, 45, 46, 1)
+        rgba(0, 0, 0, 0.3),
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0.1),
+        rgb(255, 255, 255)
       ),
       url("../../accets/navbarImage.jpg");
     background-size: cover;

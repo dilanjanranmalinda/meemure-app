@@ -203,7 +203,7 @@ const Package: React.FC<PackageProps> = (packages) => {
   };
 
   return (
-    <Grid item xs={12} sm={4}>
+    <Grid item xs={12} md={4}>
       <Paper className="packages-root">
         <Typography variant="h6" className="title">
           {title}

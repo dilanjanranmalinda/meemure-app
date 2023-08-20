@@ -9,6 +9,8 @@ import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import { FaTiktok, FaYoutube } from "react-icons/fa";
 import { GrInstagram, GrFacebookOption } from "react-icons/gr";
+import About from "../../pages/About/about";
+import Contact from "../../pages/Contact/contact";
 
 function Layout() {
   return (
@@ -25,10 +27,10 @@ function Layout() {
             justifyContent="center"
             style={{ marginTop: "15%" }}
           >
-            <Typography variant="h2" className="title" textAlign="center">
+            <Typography variant="h2" className="title" textAlign="center" color="white">
               Meemure Village Camping Site
             </Typography>
-            <Typography variant="h4" textAlign="center">
+            <Typography variant="h4" textAlign="center" color="white">
               "Discover the Beauty of Nature"
             </Typography>
 
@@ -76,13 +78,15 @@ function Layout() {
               <Booking />
             </Grid>
 
+            <Grid item xs={12} id="about">
+            <Typography variant="h3">About</Typography>
+            <About/>
+            </Grid>
             <Grid item xs={12} id="contact">
-              <h1>Contact</h1>
+            <Typography variant="h3">Contact</Typography>
+            <Contact />
             </Grid>
 
-            <Grid item xs={12} id="about">
-              <h1>About</h1>
-            </Grid>
           </Grid>
         </Grid>
       </Grid>
