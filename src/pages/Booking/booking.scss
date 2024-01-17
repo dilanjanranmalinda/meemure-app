@@ -3,13 +3,7 @@
 
   .booking-paper {
     padding: 1rem;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    transition: box-shadow 0.3s ease;
-
-    &:hover {
-      box-shadow: 0px 0px 15px rgba(0, 0, 255, 0.2);
-    }
+    background-color: rgb(0, 41, 45);
   }
 
   .calendar {

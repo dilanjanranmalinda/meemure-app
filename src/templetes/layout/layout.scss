@@ -11,19 +11,12 @@
   }
 
   .background-image {
-    background-image: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.3),
-        rgba(0, 0, 0, 0.2),
-        rgba(0, 0, 0, 0.1),
-        rgb(255, 255, 255)
-      ),
-      url("../../accets/navbarImage.jpg");
+    background-image: url("../../accets/navbarImage.jpg");
     background-size: cover;
     background-position: 10% 20%;
     background-repeat: no-repeat;
     flex: 1;
-    height: 70vh;
+    height: 82vh;
 
     @media (max-width: 640px) {
       height: 45vh;

@@ -15,13 +15,16 @@ import sample2 from "../../accets/sample2.jpg";
 import sample3 from "../../accets/sample3.jpg";
 import sample4 from "../../accets/sample4.jpg";
 import ModalComponent from "../../components/Modal/ModalCompoent";
+import { TEXT_COLOR } from "../../accets/app-constants";
 
 export interface PackageProps {
+  index: number;
   title: string;
   foriegn: PaxProps;
   local: PaxProps;
   additional: string[];
   description: string;
+  frontDescription: string;
   items: string[];
   images: {
     src: any;
@@ -38,6 +41,7 @@ interface PaxProps {
 const packages = [
   {
     title: "One Day",
+    frontDescription: "Amazing journey through the waterfals of suriaya arana.",
     foriegn: { price: "$50.00", items: ["45% discount for 5-10 pax"] },
     local: {
       price: "Rs.3000.00",
@@ -84,14 +88,14 @@ const packages = [
   },
   {
     title: "Two Days",
+    frontDescription: "Amazing journey through the waterfals of suriaya arana.",
     foriegn: { price: "$80.00", items: ["discount for 5-10 pax $75"] },
     local: {
       price: "Rs.5500.00",
       items: [
         "discount for 5-15 pax Rs.4500",
-         "discount for 15 more than pax Rs.4200",
+        "discount for 15 more than pax Rs.4200",
         "Guide free",
-        
       ],
     },
     additional: [
@@ -136,7 +140,11 @@ const packages = [
   },
   {
     title: "Three days",
-    foriegn: { price: "$100.00", items: ["discount price more than 5pax $95.00"] },
+    frontDescription: "Amazing journey through the waterfals of suriaya arana.",
+    foriegn: {
+      price: "$100.00",
+      items: ["discount price more than 5pax $95.00"],
+    },
     local: {
       price: "Rs.7500.00",
       items: [
@@ -191,10 +199,8 @@ const packages = [
   },
 ];
 
-
-
 const Package: React.FC<PackageProps> = (packages) => {
-  const { title, foriegn, local, description, items } = packages;
+  const { title, foriegn, local, frontDescription, items, index } = packages;
 
   const [open, setOpen] = useState<boolean>(false);
 
@@ -204,55 +210,21 @@ const Package: React.FC<PackageProps> = (packages) => {
 
   return (
     <Grid item xs={12} md={4}>
-      <Paper className="packages-root">
-        <Typography variant="h6" className="title">
-          {title}
-        </Typography>
-        <Divider />
-        <Box mt={2}>
-          <Typography variant="body1">{description}</Typography>
-          <List>
-            {items.map((item, index) => (
-              <ListItem key={index}>
-                <ListItemText
-                  primaryTypographyProps={{
-                    component: "span",
-                    style: { fontWeight: "bold" },
-                  }}
-                  primary={`\u2022 ${item}`}
-                />
-              </ListItem>
-            ))}
-          </List>
-          <Box display="flex" alignItems="center">
-            <Typography
-              variant="h6"
-              style={{ fontWeight: "bold", marginRight: 4 }}
-            >
-              Foreign Price:
-            </Typography>
-            <Typography variant="h5" className="price">
-              {foriegn.price}
-            </Typography>
-            <Typography variant="subtitle1" ml={1}>
-              (Per person)
-            </Typography>
-          </Box>
-          <Box display="flex" alignItems="center">
-            <Typography
-              variant="h6"
-              style={{ fontWeight: "bold", marginRight: 4 }}
-            >
-              Local Price:
-            </Typography>
-            <Typography variant="h5" className="price">
-              {local.price}
-            </Typography>
-            <Typography variant="subtitle1" ml={1}>
-              (Per person)
-            </Typography>
-          </Box>
-          <Box textAlign="right">
+      <Paper
+        className={`packages-root-${index}`}
+        sx={{ backgroundColor: "white" }}
+      >
+        <div className="cover-image"></div>
+        <Grid container direction="row" alignItems="flex-end" p={3}>
+          <Typography variant="h6" fontWeight={600} color={TEXT_COLOR}>
+            {title}
+          </Typography>
+
+          <Typography variant="body1" color={TEXT_COLOR}>
+            {frontDescription}
+          </Typography>
+
+          <Box textAlign="right" width="100%">
             <Button
               variant="text"
               color="success"
@@ -261,7 +233,7 @@ const Package: React.FC<PackageProps> = (packages) => {
               Read more
             </Button>
           </Box>
-        </Box>
+        </Grid>
       </Paper>
       <ModalComponent open={open} packages={packages} onClose={handleClose} />
     </Grid>
@@ -273,7 +245,7 @@ const Packages = () => {
     <Box mt={4}>
       <Grid container spacing={4}>
         {packages.map((pkg, index) => (
-          <Package key={index} {...pkg} />
+          <Package key={index} index={index} {...pkg} />
         ))}
       </Grid>
     </Box>

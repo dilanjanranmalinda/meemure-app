@@ -10,6 +10,7 @@ import IconButton from "@mui/material/IconButton";
 import { AiOutlineMenu, AiOutlineMenuFold } from "react-icons/ai";
 import Drawer from "@mui/material/Drawer";
 import Box from "@mui/material/Box";
+import { useScrollTrigger } from "@mui/material";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
@@ -22,8 +23,8 @@ function Navbar() {
     { title: "Home", target: "navbar" },
     { title: "Packages", target: "packages" },
     { title: "Booking", target: "booking" },
-    { title: "Contact", target: "contact" },
     { title: "About", target: "about" },
+    { title: "Contact", target: "contact" },
   ];
 
   const navLinksMarkup = navLinks.map((navLink) => (
@@ -75,11 +76,17 @@ function Navbar() {
     </div>
   );
 
+  const trigger = useScrollTrigger();
+
   return (
     <div className="navbar-root">
       <AppBar
         position="fixed"
-        sx={{ boxShadow: "none", background: "rgba(0,0,0,0.1)" }}
+        sx={{
+          boxShadow: "none",
+          background: trigger ? "rgba(0,0,0,1)" : "rgba(0,0,0,0.1)",
+          transition: "background-color 0.5s ease",
+        }}
       >
         <Toolbar
           sx={{ display: "flex", justifyContent: { xs: "none", md: "center" } }}

@@ -1,64 +1,99 @@
 @import "../../accets/constants.scss";
 
-.packages-root {
+.packages-root-0 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 100%;
-  padding: 16px;
+  height: 60vh;
+  background-size: 100% 100%;
+  border-image-slice: 1;
+  background-clip: content-box;
+
+  background: linear-gradient(to right bottom, yellow, transparent 50%)
+    no-repeat;
+  border: 4px solid transparent;
+  border-image: linear-gradient(to left top, yellow, transparent 50%) 1;
+
+  transition: box-shadow 1s ease-in-out;
+  &:hover {
+    background: linear-gradient(to right top, yellow, transparent 50%) no-repeat;
+    border: 3px solid transparent;
+    border-image: linear-gradient(to right bottom, yellow, transparent 50%) 1;
+  }
+}
+
+.packages-root-1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 60vh;
+  background-size: 100% 100%;
+  background: linear-gradient(to right bottom, orange, transparent 50%)
+    no-repeat;
+
+  border: 5px solid transparent;
+  border-image: linear-gradient(to left top, orange, transparent 50%) 1;
+  border-image-slice: 1;
+  background-clip: content-box;
+
+  transition: box-shadow 1s ease-in-out;
+  &:hover {
+    background: linear-gradient(to right top, orange, transparent 50%) no-repeat;
+    border: 5px solid transparent;
+    border-image: linear-gradient(to right bottom, orange, transparent 50%) 1;
+  }
+}
+
+.packages-root-2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 60vh;
+  background-size: 100% 100%;
 
   background: linear-gradient(
-      to bottom,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0.8) 50%,
-      $BG_COLOR 100%
-    ),
-    linear-gradient(
-      to top,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0.8) 50%,
-      $BG_COLOR 100%
-    ),
-    linear-gradient(
-      to left,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0.8) 50%,
-      $BG_COLOR 100%
-    ),
-    linear-gradient(
-      to right,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0.8) 50%,
-      $BG_COLOR 100%
-    );
+      to right bottom,
+      rgb(128, 241, 137),
+      transparent 50%
+    )
+    no-repeat;
+  border: 6px solid transparent;
+  border-image: linear-gradient(
+      to left top,
+      rgb(128, 241, 137),
+      transparent 50%
+    )
+    1;
+  border-image-slice: 1;
+  background-clip: content-box;
 
-  transition: box-shadow 0.3s ease-in-out;
+  transition: box-shadow 1s ease-in-out;
   &:hover {
-    box-shadow: 0px 0px 20px 0px #00ffff;
+    background: linear-gradient(
+        to right top,
+        rgb(128, 241, 137),
+        transparent 50%
+      )
+      no-repeat;
+    border: 5px solid transparent;
+    border-image: linear-gradient(
+        to right bottom,
+        rgb(128, 241, 137),
+        transparent 50%
+      )
+      1;
   }
+}
 
-  .title {
-    font-weight: bold;
-    margin-bottom: 8px;
-    text-align: center;
-  }
-
-  .price {
-    font-weight: bold;
-    color: orange;
-  }
-
-  .item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 4px;
-
-    & .MuiSvgIcon-root {
-      margin-right: 8px;
-      font-size: 1.2rem;
-      color: #1976d2;
-    }
-  }
+.cover-image {
+  width: 100%;
+  height: 100%;
+  background: url("../../accets/sample1.jpg") center/cover no-repeat;
+  padding: 16px;
 }

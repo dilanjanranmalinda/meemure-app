@@ -11,6 +11,8 @@ import { FaTiktok, FaYoutube } from "react-icons/fa";
 import { GrInstagram, GrFacebookOption } from "react-icons/gr";
 import About from "../../pages/About/about";
 import Contact from "../../pages/Contact/contact";
+import { TEXT_COLOR } from "../../accets/app-constants";
+import Footer from "../../components/footer/footer";
 
 function Layout() {
   return (
@@ -27,67 +29,79 @@ function Layout() {
             justifyContent="center"
             style={{ marginTop: "15%" }}
           >
-            <Typography variant="h2" className="title" textAlign="center" color="white">
+            <Typography
+              variant="h2"
+              className="title"
+              textAlign="center"
+              color="white"
+            >
               Meemure Village Camping Site
             </Typography>
             <Typography variant="h4" textAlign="center" color="white">
               "Discover the Beauty of Nature"
             </Typography>
-
-            <Grid
-              container
-              justifyContent="center"
-              style={{ marginTop: "10%" }}
-            >
-              <Grid item>
-                <IconButton aria-label="youtube" href="#">
-                  <FaYoutube size={30} />
-                </IconButton>
-              </Grid>
-              <Grid item>
-                <IconButton aria-label="facebook" href="#">
-                  <GrFacebookOption style={{ fontSize: "2rem" }} />
-                </IconButton>
-              </Grid>
-              <Grid item>
-                <IconButton aria-label="tiktok" href="#">
-                  <FaTiktok size={30} />
-                </IconButton>
-              </Grid>
-              <Grid item>
-                <IconButton aria-label="instagram" href="#">
-                  <GrInstagram size={30} />
-                </IconButton>
-              </Grid>
-            </Grid>
           </Box>
         </Grid>
-
-        <Grid container spacing={2} mt={5}>
-          <Grid item xs={12}>
-            <Slideshow />
+        <Grid container justifyContent="center" mt={5}>
+          <Grid item>
+            <IconButton aria-label="youtube" href="#">
+              <FaYoutube size={30} color={TEXT_COLOR} />
+            </IconButton>
           </Grid>
-          <Grid container spacing={2} mx={{ xs: 4, md: 10 }} mt={5}>
+          <Grid item>
+            <IconButton aria-label="facebook" href="#">
+              <GrFacebookOption
+                color={TEXT_COLOR}
+                style={{ fontSize: "2rem" }}
+              />
+            </IconButton>
+          </Grid>
+          <Grid item>
+            <IconButton aria-label="tiktok" href="#">
+              <FaTiktok color={TEXT_COLOR} size={30} />
+            </IconButton>
+          </Grid>
+          <Grid item>
+            <IconButton aria-label="instagram" href="#">
+              <GrInstagram size={30} color={TEXT_COLOR} />
+            </IconButton>
+          </Grid>
+        </Grid>
+        <Grid container justifyContent="center" mt={5}>
+          <Slideshow />
+        </Grid>
+        <Grid container spacing={2} mt={10}>
+          <Grid container spacing={2} mx={{ xs: 4, md: 10 }}>
             <Grid item xs={12} id="packages">
-              <Typography variant="h3">Packages</Typography>
+              <Typography variant="h3" color={TEXT_COLOR}>
+                Packages
+              </Typography>
               <Packages />
             </Grid>
 
-            <Grid item xs={12} id="booking">
-              <Typography variant="h3">Booking</Typography>
+            <Grid item xs={12} id="booking" mt={5}>
+              <Typography variant="h3" color={TEXT_COLOR}>
+                Booking
+              </Typography>
               <Booking />
             </Grid>
 
-            <Grid item xs={12} id="about">
-            <Typography variant="h3">About</Typography>
-            <About/>
+            <Grid item xs={12} id="about" mt={5}>
+              <Typography variant="h3" color={TEXT_COLOR}>
+                About
+              </Typography>
+              <About />
             </Grid>
-            <Grid item xs={12} id="contact">
-            <Typography variant="h3">Contact</Typography>
-            <Contact />
+            <Grid item xs={12} id="contact" mt={5}>
+              <Typography variant="h3" color={TEXT_COLOR}>
+                Contact
+              </Typography>
+              <Contact />
             </Grid>
-
           </Grid>
+        </Grid>
+        <Grid item xs={12} mt={5} id="contact">
+          <Footer />
         </Grid>
       </Grid>
     </div>

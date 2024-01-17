@@ -8,30 +8,48 @@ import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 
 const Booking = () => {
-  const [date, setDate] = React.useState(new Date());
-
-  const handleDateChange = (date: React.SetStateAction<Date>) => {
-    setDate(date);
-  };
+  const [date, setDate] = React.useState<Date | null>(null);
 
   return (
     <Box className="booking-root">
       <Grid container spacing={2}>
         <Grid item xs={12} md={6}>
           <Paper className="calendar">
-            <Typography variant="h5">Booked Dates</Typography>
+            <Typography variant="h5" color="white">
+              Booked Dates
+            </Typography>
             <Box my={3}>
-              <BookingCalendar />
+              <BookingCalendar {...{ setDate }} />
             </Box>
             <Typography variant="subtitle1">
-              Today: {date.toDateString()}
+              Today: {new Date().toDateString()}
             </Typography>
+          </Paper>
+          <Paper
+            sx={{
+              backgroundColor: date ? "orange" : "red",
+              marginTop: 1,
+              padding: 2,
+            }}
+          >
+            {date ? (
+              <Box display="flex" justifyContent="center" alignItems="center">
+                <Typography color="blue">Check-in Date</Typography>
+                <Typography variant="h4" fontWeight={500} ml={3}>
+                  {date?.toDateString()}
+                </Typography>
+              </Box>
+            ) : (
+              <Typography>Noo</Typography>
+            )}
           </Paper>
         </Grid>
         <Grid item xs={12} md={6}>
           <Paper className="booking-paper">
-            <Typography variant="h5">Camping Application</Typography>
-            <BookingForm />
+            <Typography variant="h5" fontWeight={600}>
+              Camping Application
+            </Typography>
+            <BookingForm {...{ date }} />
           </Paper>
         </Grid>
       </Grid>

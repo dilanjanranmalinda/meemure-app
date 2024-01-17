@@ -18,8 +18,8 @@ const campData = [
   {
     id: "1",
     title: "Somewhere",
-    start: new Date("2023-05-05T10:00:00"),
-    end: new Date("2023-05-05T11:30:00"),
+    start: new Date("2024-01-05T10:00:00"),
+    end: new Date("2024-01-05T11:30:00"),
   },
   {
     id: "2",
@@ -47,7 +47,7 @@ const campData = [
   },
 ];
 
-const BookingCalendar = () => {
+const BookingCalendar = ({ setDate }: any) => {
   const [events, setEvents] = useState<CampEvent[]>();
 
   useEffect(() => {
@@ -75,9 +75,7 @@ const BookingCalendar = () => {
         endAccessor="end"
         selectable
         onSelectEvent={(event) => console.log(event)}
-        onSelectSlot={(slotInfo) =>
-          console.log(`selected slot: ${slotInfo.start}`)
-        }
+        onSelectSlot={(slotInfo) => setDate(slotInfo.start)}
       />
     </Box>
   );

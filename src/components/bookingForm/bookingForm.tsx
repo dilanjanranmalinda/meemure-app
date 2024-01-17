@@ -8,29 +8,48 @@ import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
 import TextField from "@mui/material/TextField";
 import { DatePicker } from "@mui/x-date-pickers";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm, Controller } from "react-hook-form";
+import countries from "country-list";
+import { FormHelperText, Typography } from "@mui/material";
 
 // Define the form inputs as a TypeScript interface
 interface FormInputs {
   name: string;
+  from: string;
   phone: string;
   email: string;
   address: string;
   pax: number;
   package: string;
+  place: string;
   checkIn: Date;
-  checkOut: Date;
-  additionalFeatures: boolean;
+  transportation: boolean;
 }
 
 // Define the BookingForm component
-const BookingForm: React.FC = () => {
+const BookingForm = ({ date }: any) => {
   const {
     control,
     handleSubmit,
+    setError,
+    setValue,
+    clearErrors,
     formState: { errors },
   } = useForm<FormInputs>();
+
+  useEffect(() => {
+    if (!date) {
+      setError("checkIn", {
+        message: "Please select a Date from the Calender!",
+      });
+    } else {
+      setValue("checkIn", date);
+      clearErrors("checkIn");
+    }
+  }, [date]);
+
+  const [selectedPackage, setSelectedPackage] = useState(false);
 
   // Define the function to handle form submission
   const onSubmit = (data: FormInputs) => {
@@ -56,6 +75,7 @@ const BookingForm: React.FC = () => {
           />
         )}
       />
+
       <Controller
         name="address"
         control={control}
@@ -82,7 +102,7 @@ const BookingForm: React.FC = () => {
         rules={{
           required: "Email is required",
           pattern: {
-            value: /^\S+@\S+$/i,
+            value: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i,
             message: "Invalid email address",
           },
         }}
@@ -122,91 +142,146 @@ const BookingForm: React.FC = () => {
         )}
       />
 
-      <Controller
-        name="pax"
-        control={control}
-        defaultValue={1}
-        rules={{ required: "Passenger count is required" }}
-        render={({ field }) => (
-          <TextField
-            style={{ marginBottom: "2rem" }}
-            {...field}
-            type="number"
-            label="Pax"
-            variant="outlined"
-            fullWidth
-            error={!!errors.pax}
-            helperText={errors.pax?.message}
-          />
-        )}
-      />
-      <FormControl sx={{ minWidth: "20vh" }}>
-        <InputLabel>Package</InputLabel>
-        <Controller
-          name="package"
-          control={control}
-          rules={{ required: true }}
-          defaultValue=""
-          render={({ field }) => (
-            <Select
-              {...field}
-              sx={{ marginBottom: "2rem" }}
-              label="Selected Package"
-              error={!!errors.package}
-            >
-              <MenuItem value="oneday">One Day</MenuItem>
-              <MenuItem value="twodays">Two Days</MenuItem>
-              <MenuItem value="threedays">Three Days</MenuItem>
-            </Select>
-          )}
-        />
-        {errors.package && <div>This field is required</div>}
-      </FormControl>
       <Grid container spacing={1}>
         <Grid item xs={12} sm={6}>
           <Controller
-            name="checkIn"
+            name="package"
             control={control}
-            rules={{ required: true }}
+            defaultValue=""
+            rules={{ required: "Package is required" }}
             render={({ field }) => (
-              <DatePicker
-                sx={{ marginBottom: "2rem" }}
+              <TextField
                 {...field}
-                label="Check-in Date"
-              />
+                style={{ marginBottom: "2rem" }}
+                onChange={(e) => {
+                  setValue("package", e.target.value);
+                  setSelectedPackage(true);
+                }}
+                select
+                label="Package"
+                variant="outlined"
+                fullWidth
+                error={!!errors.package}
+                helperText={errors.package?.message}
+              >
+                <MenuItem value="oneday">One Day</MenuItem>
+                <MenuItem value="twodays">Two Days</MenuItem>
+                <MenuItem value="threedays">Three Days</MenuItem>
+              </TextField>
+            )}
+          />
+        </Grid>
+        {selectedPackage && (
+          <Grid item xs={12} sm={6}>
+            <Controller
+              name="place"
+              control={control}
+              defaultValue=""
+              rules={{ required: "Place is required" }}
+              render={({ field }) => (
+                <TextField
+                  {...field}
+                  style={{ marginBottom: "2rem" }}
+                  select
+                  label="Place"
+                  variant="filled"
+                  fullWidth
+                  error={!!errors.place}
+                  helperText={errors.place?.message}
+                >
+                  <MenuItem value="7fall">7Fall</MenuItem>
+                  <MenuItem value="meemure">Meemure Village</MenuItem>
+                </TextField>
+              )}
+            />
+          </Grid>
+        )}
+      </Grid>
+      <Grid container spacing={1}>
+        <Grid item xs={12} sm={6}>
+          <Controller
+            name="from"
+            control={control}
+            defaultValue=""
+            rules={{ required: "Country is required" }}
+            render={({ field }) => (
+              <TextField
+                {...field}
+                style={{ marginBottom: "2rem" }}
+                select
+                label="From"
+                variant="outlined"
+                fullWidth
+                error={!!errors.from}
+                helperText={errors.from?.message}
+              >
+                {countries.getData().map((country, index) => (
+                  <MenuItem key={index} value={country.code}>
+                    {country.name}
+                  </MenuItem>
+                ))}
+              </TextField>
             )}
           />
         </Grid>
         <Grid item xs={12} sm={6}>
           <Controller
-            name="checkOut"
+            name="pax"
             control={control}
-            rules={{ required: true }}
+            defaultValue={1}
+            rules={{ required: "Pax count is required" }}
             render={({ field }) => (
-              <DatePicker
-                sx={{ marginBottom: "2rem" }}
+              <TextField
+                style={{ marginBottom: "2rem" }}
                 {...field}
-                label="Check-out Date"
+                type="number"
+                label="Pax"
+                variant="outlined"
+                fullWidth
+                error={!!errors.pax}
+                helperText={errors.pax?.message}
               />
             )}
           />
         </Grid>
       </Grid>
-
-      <FormControlLabel
-        control={
-          <Controller
-            name="additionalFeatures"
-            control={control}
-            defaultValue={false}
-            render={({ field }) => <Checkbox {...field} color="primary" />}
+      {errors.checkIn && (
+        <FormHelperText error={!!errors.checkIn}>
+          {errors.checkIn?.message}
+        </FormHelperText>
+      )}
+      <Grid container spacing={1}>
+        <Grid item xs={12} sm={8}>
+          <FormControlLabel
+            control={
+              <Controller
+                name="transportation"
+                control={control}
+                defaultValue={false}
+                render={({ field }) => <Checkbox {...field} color="primary" />}
+              />
+            }
+            label={
+              <Typography
+                variant="body2"
+                display="flex"
+                gap={1}
+                justifyItems="center"
+              >
+                Transportaion
+                <Typography variant="caption" color="yellow">
+                  (Additional Charges may apply)
+                </Typography>
+              </Typography>
+            }
           />
-        }
-        label="Additional Features"
-      />
-      <Button type="submit" variant="contained" color="primary">
-        Book Now
-      </Button>
+        </Grid>
+        <Grid item xs={12} sm={4} justifyContent="right" display="flex">
+          <Button type="submit" variant="contained" color="primary">
+            Book Now
+          </Button>
+        </Grid>
+      </Grid>
     </form>
   );
 };
