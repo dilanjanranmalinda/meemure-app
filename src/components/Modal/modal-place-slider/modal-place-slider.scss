@@ -1,0 +1,16 @@
+.place-wrapper {
+  height: 30vw;
+  // position: relative;
+
+  .text-overlay-place {
+    position: absolute;
+    color: #c8fcea;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    text-align: center;
+  }
+}

@@ -4,7 +4,7 @@ import {
   responsiveFontSizes,
 } from "@mui/material/styles";
 import "./App.scss";
-import { BG_COLOR, PAPER_COLOR, TEXT_COLOR } from "./accets/app-constants";
+import { BG_COLOR, PAPER_COLOR } from "./accets/app-constants";
 import Layout from "./templetes/layout/layout";
 import CssBaseline from "@mui/material/CssBaseline";
 import "@fontsource/roboto/300.css";

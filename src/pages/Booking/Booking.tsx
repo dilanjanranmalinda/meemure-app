@@ -40,14 +40,16 @@ const Booking = () => {
                 </Typography>
               </Box>
             ) : (
-              <Typography>Noo</Typography>
+              <Typography width="100%" textAlign="center">
+                No Check-in Date Selected!
+              </Typography>
             )}
           </Paper>
         </Grid>
         <Grid item xs={12} md={6}>
           <Paper className="booking-paper">
             <Typography variant="h5" fontWeight={600}>
-              Camping Application
+              Booking Form
             </Typography>
             <BookingForm {...{ date }} />
           </Paper>

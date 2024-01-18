@@ -3,7 +3,6 @@ import { BsTelephonePlus } from "react-icons/bs";
 import { MdAlternateEmail } from "react-icons/md";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import "./contact.scss";
-import { TEXT_COLOR } from "../../accets/app-constants";
 const Contact = () => {
   return (
     <Box>

@@ -3,11 +3,7 @@ import "./packages.scss";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
-import Divider from "@mui/material/Divider";
 import Box from "@mui/material/Box";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemText from "@mui/material/ListItemText";
 import Button from "@mui/material/Button";
 
 import sample1 from "../../accets/sample1.jpg";
@@ -46,9 +42,9 @@ const packages = [
     local: {
       price: "Rs.3000.00",
       items: [
-        "5% discount for 5-10 pax",
-        "Guide free",
-        "Rs.2600.00 discount price for 10 or more",
+        "5-10 පිරිසක් සඳහා 5% ක වට්ටමක්",
+        "නියාමනවරයෙකු නොමිලේ",
+        "10 වඩා වැඩි පිරිසක් සඳහා Rs.2600.00 ක වට්ටමක්",
       ],
     },
     additional: [
@@ -67,21 +63,25 @@ const packages = [
       {
         src: sample4,
         alt: "WorldEnd and Elli 7",
+        width: "600vh",
         caption: "Example image 1 caption",
       },
       {
         src: sample3,
         alt: "Wedi Lunu Guhawa",
+        width: "800vh",
         caption: "Example image 2 caption",
       },
       {
         src: sample2,
         alt: "Suriya Arana Ella",
+        width: "800vh",
         caption: "Example image 3 caption",
       },
       {
         src: sample1,
         alt: "Meemure Eli 7",
+        width: "800vh",
         caption: "Example image 4 caption",
       },
     ],
@@ -99,7 +99,7 @@ const packages = [
       ],
     },
     additional: [
-      "Rs.4000, Speacial Discount for Students more tha 10 pax",
+      "Rs.4000, Speacial Discount for Students more than 10 pax",
       "if you want BBQ per person Rs.500",
       "Note that transportation cost maybe vary, so follow the instructions on the booking to manage those",
     ],
@@ -129,6 +129,7 @@ const packages = [
       {
         src: sample2,
         alt: "Hulan Kapolla",
+        width: "800vh",
         caption: "Example image 3 caption",
       },
       {
@@ -200,7 +201,7 @@ const packages = [
 ];
 
 const Package: React.FC<PackageProps> = (packages) => {
-  const { title, foriegn, local, frontDescription, items, index } = packages;
+  const { title, frontDescription, index } = packages;
 
   const [open, setOpen] = useState<boolean>(false);
 
