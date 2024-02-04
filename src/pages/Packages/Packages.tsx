@@ -10,6 +10,15 @@ import sample1 from "../../accets/sample1.jpg";
 import sample2 from "../../accets/sample2.jpg";
 import sample3 from "../../accets/sample3.jpg";
 import sample4 from "../../accets/sample4.jpg";
+import Suriyaaranaella3 from "../../accets//Images/Suriyaarana/suriyaaranaElla3.jpg";
+import memureElla from "../../accets//Images/Oyabokkafall/memureElla.jpg";
+import worldend from "../../accets//Images/Miniworldend/worldend.jpg";
+import nitroCave from "../../accets//Images/Nitrocave/nitroCave.jpg";
+import meemure from "../../accets//Images//Suriyaarana/Meemure.jpg";
+import meemure1 from "../../accets//Images//Suriyaarana/Meemure1.jpg";
+import dothulugala9 from "../../accets//Images//Dothulugala/dothulugala9.jpg";
+import Sevenwaterfall3 from "../../accets//Images//7waterfall/7waterfall3.jpg";
+import lakegala from "../../accets/Images/Lakegala/lakegala-top.webp";
 import ModalComponent from "../../components/Modal/ModalCompoent";
 import { TEXT_COLOR } from "../../accets/app-constants";
 
@@ -61,28 +70,28 @@ const packages = [
     ],
     images: [
       {
-        src: sample4,
-        alt: "WorldEnd and Elli 7",
-        width: "600vh",
-        caption: "Example image 1 caption",
+        src: memureElla,
+        alt: "Meemure Ella",
+        width: "700vh",
+        caption: "Water Fall",
       },
       {
-        src: sample3,
-        alt: "Wedi Lunu Guhawa",
-        width: "800vh",
-        caption: "Example image 2 caption",
-      },
-      {
-        src: sample2,
+        src: Suriyaaranaella3,
         alt: "Suriya Arana Ella",
-        width: "800vh",
-        caption: "Example image 3 caption",
+        width: "590vh",
+        caption: "Water Fall",
       },
       {
-        src: sample1,
-        alt: "Meemure Eli 7",
-        width: "800vh",
-        caption: "Example image 4 caption",
+        src: meemure,
+        alt: "Meemure Village",
+        width: "593vh",
+        caption: "Hidden Nature",
+      },
+      {
+        src: meemure1,
+        alt: "Meemure Culture",
+        width: "600vh",
+        caption: "Delicious culture",
       },
     ],
   },
@@ -117,25 +126,27 @@ const packages = [
     ],
     images: [
       {
-        src: sample4,
-        alt: "Hunasgiriya Mountain",
-        caption: "Example image 1 caption",
+        src: dothulugala9,
+        alt: "Dothalugala Mountain",
+        width: "593vh",
+        caption: "Knuckles Mountain Range",
       },
       {
-        src: sample3,
-        alt: "Little World End",
-        caption: "Example image 2 caption",
+        src: Sevenwaterfall3,
+        alt: "Seven Water Falls",
+        // width: "400vh",
+        caption: "Water Fall",
       },
       {
-        src: sample2,
-        alt: "Hulan Kapolla",
-        width: "800vh",
-        caption: "Example image 3 caption",
+        src: Suriyaaranaella3,
+        alt: "Suriya Arana Ella",
+        width: "500vh",
+        caption: "Adventure",
       },
       {
-        src: sample1,
-        alt: "Eli 7",
-        caption: "Example image 4 caption",
+        src: memureElla,
+        alt: "Meemure Ella",
+        caption: "Hikking",
       },
     ],
   },
@@ -177,24 +188,45 @@ const packages = [
     ],
     images: [
       {
-        src: sample4,
-        alt: "Hunasgiriya Mountain",
-        caption: "Example image 1 caption",
+        src: worldend,
+        alt: "Mini Worldend",
+        width: "670vh",
+        caption: "Knuckles Mountain Range",
       },
       {
-        src: sample3,
-        alt: "Little World End",
-        caption: "Example image 2 caption",
+        src: nitroCave,
+        alt: "Nitro Cave",
+        width: "670vh",
+        caption: "Hikking",
       },
       {
-        src: sample2,
-        alt: "Hulan Kapolla",
-        caption: "Example image 3 caption",
+        src: dothulugala9,
+        alt: "Dothalugala Mountain",
+        width: "593vh",
+        caption: "Knuckles Mountain Range",
       },
       {
-        src: sample1,
-        alt: "Eli 7",
-        caption: "Example image 4 caption",
+        src: lakegala,
+        alt: "Lakegala Mountain",
+        width: "593vh",
+        caption: "Knuckles Mountain Range",
+      },
+      {
+        src: Sevenwaterfall3,
+        alt: "Seven Water Falls",
+        // width: "400vh",
+        caption: "Water Fall",
+      },
+      {
+        src: Suriyaaranaella3,
+        alt: "Suriya Arana Ella",
+        width: "500vh",
+        caption: "Adventure",
+      },
+      {
+        src: memureElla,
+        alt: "Meemure Ella",
+        caption: "Hikking",
       },
     ],
   },
