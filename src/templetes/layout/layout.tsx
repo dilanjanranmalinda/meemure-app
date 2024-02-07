@@ -13,6 +13,9 @@ import About from "../../pages/About/about";
 import Contact from "../../pages/Contact/contact";
 import { TEXT_COLOR } from "../../accets/app-constants";
 import Footer from "../../components/footer/footer";
+import { Container, Paper } from "@mui/material";
+import Adventure from "../../pages/Adventure/adventure";
+import Services from "../../pages/Service/services";
 
 function Layout() {
   return (
@@ -79,6 +82,10 @@ function Layout() {
               <Packages />
             </Grid>
 
+            <Grid item xs={12} id="packages">
+              <Adventure />
+            </Grid>
+
             <Grid item xs={12} id="booking" mt={5}>
               <Typography variant="h3" color={TEXT_COLOR}>
                 Booking
@@ -86,18 +93,24 @@ function Layout() {
               <Booking />
             </Grid>
 
-            <Grid item xs={12} id="about" mt={5}>
-              <Typography variant="h3" color={TEXT_COLOR}>
-                About
-              </Typography>
-              <About />
+            <Grid item xs={12} id="booking" mt={5}>
+              <Services />
             </Grid>
-            <Grid item xs={12} id="contact" mt={5}>
-              <Typography variant="h3" color={TEXT_COLOR}>
-                Contact
-              </Typography>
-              <Contact />
-            </Grid>
+
+            <Paper className="footer" data-background-color="black" id="footer">
+              <Grid item xs={12} id="about" mt={5}>
+                <Typography variant="h3" color={TEXT_COLOR}>
+                  About
+                </Typography>
+                <About />
+              </Grid>
+              <Grid item xs={12} id="contact" mt={5}>
+                <Typography variant="h3" color={TEXT_COLOR}>
+                  Contact
+                </Typography>
+                <Contact />
+              </Grid>
+            </Paper>
           </Grid>
         </Grid>
         <Grid item xs={12} mt={5} id="contact">
