@@ -93,7 +93,7 @@ function Layout() {
               <Booking />
             </Grid>
 
-            <Grid item xs={12} id="booking" mt={5}>
+            <Grid item xs={12} id="packages-root-2">
               <Services />
             </Grid>
 
