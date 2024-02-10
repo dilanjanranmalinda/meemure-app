@@ -71,7 +71,7 @@ function Layout() {
           </Grid>
         </Grid>
         <Grid container justifyContent="center" mt={5}>
-          <Slideshow />
+          {/* <Slideshow /> */}
         </Grid>
         <Grid container spacing={2} mt={10}>
           <Grid container spacing={2} mx={{ xs: 4, md: 10 }}>

@@ -34,7 +34,14 @@ const ModalComponent = ({ open, onClose, packages }: ModalProps) => {
         <Grid container gap={1} sx={{ backgroundColor: "white", p: 3 }}>
           <ModalHeader {...{ title, onClose }} />
           <Grid container>
-            <Grid sm={8} p={2} gap={2} display="flex" flexDirection="column">
+            <Grid
+              item
+              sm={8}
+              p={2}
+              gap={2}
+              display="flex"
+              flexDirection="column"
+            >
               <ModalImageSlider {...{ images }} />
               <ModalDesc {...{ description, items }} />
               <Grid
