@@ -45,16 +45,16 @@ const DisplayData = ({ data, onCancel, onConfirm }: any) => {
         </Grid>
       </Paper>
       <Grid container px={3} pb={2} justifyContent="space-between">
-        <Button variant="contained" color="warning" onClick={onConfirm}>
-          Confirm
+        <Button variant="contained" onClick={onCancel} color="error">
+          Cancel
         </Button>
         <Button
-          variant="contained"
-          onClick={onCancel}
           style={{ marginLeft: "10px" }}
-          color="error"
+          variant="contained"
+          color="warning"
+          onClick={onConfirm}
         >
-          Cancel
+          Confirm
         </Button>
       </Grid>
     </>

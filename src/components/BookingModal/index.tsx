@@ -1,12 +1,16 @@
 import Dialog from "@mui/material/Dialog";
 import Slide from "@mui/material/Slide";
 import { TransitionProps } from "@mui/material/transitions";
-import { Fragment, forwardRef, useEffect, useState } from "react";
-import { Box, CircularProgress, IconButton, Typography } from "@mui/material";
+import { Fragment, forwardRef, useState } from "react";
+import { Alert, Box, CircularProgress, IconButton } from "@mui/material";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import DisplayData from "./DisplayData";
 import ConfirmationMessage from "./ConfirmationMessage";
 import { scroller } from "react-scroll";
+import { collection, addDoc } from "firebase/firestore/lite";
+import { db } from "../../firebase.config";
+
+const baseUrl = process.env.REACT_APP_BACKEND_URL;
 
 const Transition = forwardRef(function Transition(
   props: TransitionProps & {
@@ -20,15 +24,33 @@ const Transition = forwardRef(function Transition(
 export default function BookingModal({ data, setData }: any) {
   const [loading, setLoading] = useState(false);
   const [confirm, setConfirm] = useState(false);
+  const [isError, setIsError] = useState(false);
   const [referenceNumber, setReferenceNumber] = useState<String | null>(null);
 
   const onConfirm = async () => {
     setLoading(true);
     try {
+      const docRef = await addDoc(collection(db, "booking"), data);
+      if (docRef.id) {
+        const response = await fetch(baseUrl + "/send-email", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ ...data, referenceNumber: docRef.id }),
+        });
+
+        const result = await response.json();
+        console.log(result);
+      }
+      setReferenceNumber(docRef.id);
+      setLoading(false);
+      setIsError(false);
       setConfirm(true);
-      setReferenceNumber("Tsdsd-sdsd-sdsd-2323");
     } catch (e) {
       console.log("e", e);
+      setIsError(true);
+      setLoading(false);
     }
     setLoading(false);
   };
@@ -37,6 +59,7 @@ export default function BookingModal({ data, setData }: any) {
     setData(null);
     setConfirm(false);
     setLoading(false);
+    setIsError(false);
   };
 
   const onContactUs = () => {
@@ -46,8 +69,6 @@ export default function BookingModal({ data, setData }: any) {
       duration: 500,
     });
   };
-
-  console.log("data", data);
 
   return (
     <Fragment>
@@ -77,7 +98,12 @@ export default function BookingModal({ data, setData }: any) {
             </IconButton>
           </Box>
         )}
-
+        {isError && (
+          <Alert severity="error">
+            Sorry, Something went wrong, please contact us through phone or
+            email.
+          </Alert>
+        )}
         {confirm && (
           <Box
             display="flex"
@@ -96,7 +122,7 @@ export default function BookingModal({ data, setData }: any) {
             )}
           </Box>
         )}
-        {!confirm && data && (
+        {!loading && !confirm && data && (
           <DisplayData {...{ onConfirm, data, onCancel: handleClose }} />
         )}
       </Dialog>

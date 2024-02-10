@@ -36,7 +36,6 @@ const BookingForm = ({ date }: any) => {
 
   const [selectedPackage, setSelectedPackage] = useState(false);
 
-  // Define the function to handle form submission
   const onSubmit = (data: FormInputs) => {
     setData(data);
   };
