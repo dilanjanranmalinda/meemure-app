@@ -11,10 +11,11 @@ import SevenWaterFall from "../../accets//Images/7waterfall/7waterfall.jpg";
 import Hikking from "../../accets//Images/Lakegala/Hiking1.jpg";
 import Climbing from "../../accets//Images/Lakegala/climbing.jpg";
 import Night from "../../accets//Images/Lakegala/Night.jpg";
+import "./adventure.scss";
 
 const Adventure = () => {
   return (
-    <div>
+    <div className="img-hover-zoom">
       <Box
         display="flex"
         flexDirection="column"
@@ -56,7 +57,7 @@ const Adventure = () => {
             variant="h5"
             component="div"
             align="center"
-            style={{ color: "perpel" }}
+            style={{ color: "#ffff" }}
           >
             Waterfall Climbing
           </Typography>
@@ -70,7 +71,7 @@ const Adventure = () => {
             variant="h5"
             component="div"
             align="center"
-            style={{ color: "perpel" }}
+            style={{ color: "#ffff" }}
           >
             Water Activity
           </Typography>
@@ -86,7 +87,13 @@ const Adventure = () => {
         >
           <img src={Hikking} alt="Image" height="250" width="350" />
 
-          <Typography gutterBottom variant="h5" component="div" align="center">
+          <Typography
+            gutterBottom
+            variant="h5"
+            component="div"
+            align="center"
+            style={{ color: "#ffff" }}
+          >
             Hiking
           </Typography>
         </Card>
@@ -99,7 +106,7 @@ const Adventure = () => {
             variant="h5"
             component="div"
             align="center"
-            style={{ color: "perpel" }}
+            style={{ color: "#ffff" }}
           >
             Night Camping
           </Typography>

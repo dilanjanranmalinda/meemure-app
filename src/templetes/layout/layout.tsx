@@ -96,24 +96,24 @@ function Layout() {
             <Grid item xs={12} id="packages-root-2">
               <Services />
             </Grid>
-
-            <Paper className="footer" data-background-color="black" id="footer">
-              <Grid item xs={12} id="about" mt={5}>
-                <Typography variant="h3" color={TEXT_COLOR}>
-                  About
-                </Typography>
-                <About />
-              </Grid>
-              <Grid item xs={12} id="contact" mt={5}>
-                <Typography variant="h3" color={TEXT_COLOR}>
-                  Contact
-                </Typography>
-                <Contact />
-              </Grid>
-            </Paper>
           </Grid>
         </Grid>
+
         <Grid item xs={12} mt={5} id="contact">
+          <Paper className="footer" data-background-color="black" id="footer">
+            <Grid item xs={12} id="about" mt={5}>
+              <Typography variant="h3" color={TEXT_COLOR}>
+                About
+              </Typography>
+              <About />
+            </Grid>
+            <Grid item xs={12} id="contact" mt={5}>
+              <Typography variant="h3" color={TEXT_COLOR}>
+                Contact
+              </Typography>
+              <Contact />
+            </Grid>
+          </Paper>
           <Footer />
         </Grid>
       </Grid>

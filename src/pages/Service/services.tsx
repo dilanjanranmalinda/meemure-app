@@ -8,7 +8,14 @@ const Services = () => {
   return (
     <div>
       <Box display="flex" flexDirection="row" alignItems="center" marginTop={2}>
-        <Card style={{ width: "25rem", margin: "20px", color: CARD_COLOR }}>
+        <Card
+          elevation={5}
+          style={{
+            width: "25rem",
+            margin: "20px",
+            backgroundColor: "#fff",
+          }}
+        >
           <Box
             display="flex"
             flexDirection="column"
@@ -20,14 +27,17 @@ const Services = () => {
             <Typography variant="h6" color="orange">
               Guidance
             </Typography>
-            <Typography variant="body1" color="#37B5B6">
+            <Typography variant="body1" color="#37B5B6" p={1} align="center">
               We have experienced guides with 15 years of expertise. and they
               responsible for everithings.
             </Typography>
           </Box>
         </Card>
 
-        <Card style={{ width: "25rem", margin: "20px" }}>
+        <Card
+          elevation={5}
+          style={{ width: "25rem", margin: "20px", backgroundColor: "#fff" }}
+        >
           <Box
             display="flex"
             flexDirection="column"
@@ -39,14 +49,17 @@ const Services = () => {
             <Typography variant="h6" ml={1} color="orange">
               Safety
             </Typography>
-            <Typography variant="body1" color="#37B5B6">
+            <Typography variant="body1" color="#37B5B6" p={1} align="center">
               Your safety is our top priority. We adhere to strict safety to
               secure adventure experience.
             </Typography>
           </Box>
         </Card>
 
-        <Card style={{ width: "25rem", margin: "20px" }}>
+        <Card
+          elevation={5}
+          style={{ width: "25rem", margin: "20px", backgroundColor: "#fff" }}
+        >
           <Box
             display="flex"
             flexDirection="column"
@@ -58,7 +71,7 @@ const Services = () => {
             <Typography variant="h6" color="orange">
               Skills
             </Typography>
-            <Typography variant="body1" color="#37B5B6">
+            <Typography variant="body1" color="#37B5B6" p={1} align="center">
               Our skilled team is equipped with the latest techniques to make
               your adventure unforgettable.
             </Typography>

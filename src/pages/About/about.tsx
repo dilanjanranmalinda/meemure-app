@@ -9,6 +9,8 @@ const About = () => {
         sx={{ textIndent: 20 }}
         mt={2}
         textAlign="justify"
+        p={1}
+        align="center"
       >
         Welcome to “Meemure Village Camping” Meemure is a sanctuary of natural
         wonder and cultural discovery nestled in the heart of Sri Lanka. Since
