@@ -18,8 +18,16 @@ interface ModalProps {
 }
 
 const ModalComponent = ({ open, onClose, packages }: ModalProps) => {
-  const { title, additional, foriegn, local, items, images, description } =
-    packages;
+  const {
+    title,
+    additional,
+    foriegn,
+    local,
+    items,
+    places,
+    description,
+    additionalPlaces,
+  } = packages;
 
   return (
     <Modal
@@ -42,20 +50,22 @@ const ModalComponent = ({ open, onClose, packages }: ModalProps) => {
               display="flex"
               flexDirection="column"
             >
-              <ModalImageSlider {...{ images }} />
+              <ModalImageSlider {...{ images: places }} />
               <ModalDesc {...{ description, items }} />
-              <Grid
-                item
-                xs={12}
-                component={Paper}
-                pt={2}
-                sx={{ backgroundColor: "coral" }}
-              >
-                <Typography fontWeight="600" variant="h6" px={2} gutterBottom>
-                  You can also select any one of these additional places
-                </Typography>
-                <ModalPlaceSlider {...{ images }} />
-              </Grid>
+              {places && places.length !== 0 && (
+                <Grid
+                  item
+                  xs={12}
+                  component={Paper}
+                  pt={2}
+                  sx={{ backgroundColor: "coral" }}
+                >
+                  <Typography fontWeight="600" variant="h6" px={2} gutterBottom>
+                    You can also select any one of these additional places
+                  </Typography>
+                  <ModalPlaceSlider {...{ images: additionalPlaces }} />
+                </Grid>
+              )}
             </Grid>
             <Grid item sm={4} pt={2}>
               <ModalSidebar {...{ foriegn, local, additional }} />

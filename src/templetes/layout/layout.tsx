@@ -13,7 +13,6 @@ import About from "../../pages/About/about";
 import Contact from "../../pages/Contact/contact";
 import { TEXT_COLOR } from "../../accets/app-constants";
 import Footer from "../../components/footer/footer";
-import { Container, Paper } from "@mui/material";
 import Adventure from "../../pages/Adventure/adventure";
 import Services from "../../pages/Service/services";
 
@@ -71,7 +70,7 @@ function Layout() {
           </Grid>
         </Grid>
         <Grid container justifyContent="center" mt={5}>
-          {/* <Slideshow /> */}
+          <Slideshow />
         </Grid>
         <Grid container spacing={2} mt={10}>
           <Grid container spacing={2} mx={{ xs: 4, md: 10 }}>
@@ -82,7 +81,7 @@ function Layout() {
               <Packages />
             </Grid>
 
-            <Grid item xs={12} id="packages">
+            <Grid item xs={12} mt={5}>
               <Adventure />
             </Grid>
 
@@ -92,15 +91,9 @@ function Layout() {
               </Typography>
               <Booking />
             </Grid>
-
-            <Grid item xs={12} id="packages-root-2">
+            <Grid item xs={12} mt={5}>
               <Services />
             </Grid>
-          </Grid>
-        </Grid>
-
-        <Grid item xs={12} mt={5} id="contact">
-          <Paper className="footer" data-background-color="black" id="footer">
             <Grid item xs={12} id="about" mt={5}>
               <Typography variant="h3" color={TEXT_COLOR}>
                 About
@@ -113,7 +106,10 @@ function Layout() {
               </Typography>
               <Contact />
             </Grid>
-          </Paper>
+          </Grid>
+        </Grid>
+
+        <Grid item xs={12} mt={5} id="contact">
           <Footer />
         </Grid>
       </Grid>

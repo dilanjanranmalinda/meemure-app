@@ -4,8 +4,9 @@ import "./slideshow.scss";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import ReactPlayer from "react-player";
-import { Typography } from "@mui/material";
+import { Paper, Typography } from "@mui/material";
 import { videos } from "./slidshow.constant";
+import { TEXT_COLOR } from "../../accets/app-constants";
 
 const Slideshow: React.FC = () => {
   return (
@@ -22,19 +23,35 @@ const Slideshow: React.FC = () => {
           <Box key={index}>
             <Grid container>
               <div className="videoWrapper">
-                <div className="gradient-overlay-left">
-                  <div className="textOverlay">
-                    <Typography variant="h4" fontWeight={600}>
+                <div className="textOverlay">
+                  <Paper
+                    sx={{
+                      px: 5,
+                      pt: 1,
+                      backgroundColor: "white",
+                      borderRadius: 20,
+                    }}
+                  >
+                    <Typography
+                      variant="h4"
+                      fontWeight={600}
+                      color={TEXT_COLOR}
+                    >
                       {title}
                     </Typography>
-                    <Typography variant="body1" paragraph>
+                    <Typography
+                      pb={1}
+                      variant="body1"
+                      paragraph
+                      color={TEXT_COLOR}
+                    >
                       {description}
                     </Typography>
-                  </div>
+                  </Paper>
                 </div>
 
                 <ReactPlayer
-                  // playing
+                  playing
                   loop
                   url={video}
                   muted

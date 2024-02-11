@@ -5,22 +5,9 @@ import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-
-import sample1 from "../../accets/sample1.jpg";
-import sample2 from "../../accets/sample2.jpg";
-import sample3 from "../../accets/sample3.jpg";
-import sample4 from "../../accets/sample4.jpg";
-import Suriyaaranaella3 from "../../accets//Images/Suriyaarana/suriyaaranaElla3.jpg";
-import memureElla from "../../accets//Images/Oyabokkafall/memureElla.jpg";
-import worldend from "../../accets//Images/Miniworldend/worldend.jpg";
-import nitroCave from "../../accets//Images/Nitrocave/nitroCave.jpg";
-import meemure from "../../accets//Images//Suriyaarana/Meemure.jpg";
-import meemure1 from "../../accets//Images//Suriyaarana/Meemure1.jpg";
-import dothulugala9 from "../../accets//Images//Dothulugala/dothulugala9.jpg";
-import Sevenwaterfall3 from "../../accets//Images//7waterfall/7waterfall3.jpg";
-import lakegala from "../../accets/Images/Lakegala/lakegala-top.webp";
 import ModalComponent from "../../components/Modal/ModalCompoent";
 import { TEXT_COLOR } from "../../accets/app-constants";
+import { packages } from "./packages.constant";
 
 export interface PackageProps {
   index: number;
@@ -31,7 +18,12 @@ export interface PackageProps {
   description: string;
   frontDescription: string;
   items: string[];
-  images: {
+  places: {
+    src: any;
+    alt: string;
+    caption: string;
+  }[];
+  additionalPlaces: {
     src: any;
     alt: string;
     caption: string;
@@ -42,195 +34,6 @@ interface PaxProps {
   price: string;
   items: string[];
 }
-
-const packages = [
-  {
-    title: "One Day",
-    frontDescription: "Amazing journey through the waterfals of suriaya arana.",
-    foriegn: { price: "$50.00", items: ["45% discount for 5-10 pax"] },
-    local: {
-      price: "Rs.3000.00",
-      items: [
-        "5-10 පිරිසක් සඳහා 5% ක වට්ටමක්",
-        "නියාමනවරයෙකු නොමිලේ",
-        "10 වඩා වැඩි පිරිසක් සඳහා Rs.2600.00 ක වට්ටමක්",
-      ],
-    },
-    additional: [
-      "Guide price Rs.3000",
-      "Rs.2500, Speacial Discount for Students more tha 10 pax",
-      "Note that transportation cost maybe vary, so follow the instructions on the booking to manage those",
-    ],
-    description: "This pack includes,",
-    items: [
-      "Breakfast",
-      "Lunch",
-      "Evening Tea (with traditional sweets)",
-      "Traditional Food (Wali thalapa/Kithul Pani/Kithul thalapa)",
-    ],
-    images: [
-      {
-        src: memureElla,
-        alt: "Meemure Ella",
-        width: "700vh",
-        caption: "Water Fall",
-      },
-      {
-        src: Suriyaaranaella3,
-        alt: "Suriya Arana Ella",
-        width: "590vh",
-        caption: "Water Fall",
-      },
-      {
-        src: meemure,
-        alt: "Meemure Village",
-        width: "593vh",
-        caption: "Hidden Nature",
-      },
-      {
-        src: meemure1,
-        alt: "Meemure Culture",
-        width: "600vh",
-        caption: "Delicious culture",
-      },
-    ],
-  },
-  {
-    title: "Two Days",
-    frontDescription: "Amazing journey through the waterfals of suriaya arana.",
-    foriegn: { price: "$80.00", items: ["discount for 5-10 pax $75"] },
-    local: {
-      price: "Rs.5500.00",
-      items: [
-        "discount for 5-15 pax Rs.4500",
-        "discount for 15 more than pax Rs.4200",
-        "Guide free",
-      ],
-    },
-    additional: [
-      "Rs.4000, Speacial Discount for Students more than 10 pax",
-      "if you want BBQ per person Rs.500",
-      "Note that transportation cost maybe vary, so follow the instructions on the booking to manage those",
-    ],
-
-    description: "This pack includes,",
-    items: [
-      "1st day",
-      "Lunch (with traditional meals)",
-      "Dinner (with Rice and cury)",
-      "2st day",
-      "Breackfast (with Rice/Roti/Kiribath)",
-      "Morning Special ( Kolakeda/Ranawara/Belimal)",
-      "Lunch (Fride rice with desart)",
-      "Evining Tea (With Kitul hakuru)",
-    ],
-    images: [
-      {
-        src: dothulugala9,
-        alt: "Dothalugala Mountain",
-        width: "593vh",
-        caption: "Knuckles Mountain Range",
-      },
-      {
-        src: Sevenwaterfall3,
-        alt: "Seven Water Falls",
-        // width: "400vh",
-        caption: "Water Fall",
-      },
-      {
-        src: Suriyaaranaella3,
-        alt: "Suriya Arana Ella",
-        width: "500vh",
-        caption: "Adventure",
-      },
-      {
-        src: memureElla,
-        alt: "Meemure Ella",
-        caption: "Hikking",
-      },
-    ],
-  },
-  {
-    title: "Three days",
-    frontDescription: "Amazing journey through the waterfals of suriaya arana.",
-    foriegn: {
-      price: "$100.00",
-      items: ["discount price more than 5pax $95.00"],
-    },
-    local: {
-      price: "Rs.7500.00",
-      items: [
-        "discount price more than 5pax Rs.70000.00",
-        "Guide free",
-        "Fire Night and BBQ",
-      ],
-    },
-    additional: [
-      "Rs.6500.00, Speacial Discount for Students more tha 10 pax",
-      "Note that transportation cost maybe vary, so follow the instructions on the booking to manage those",
-    ],
-
-    description: "This pack includes,",
-    items: [
-      "1st day",
-      "Lunch (with traditional meals)",
-      "Dinner (with Rice and cury)",
-      "2nd day",
-      "Breackfast (with Rice/Roti/Kiribath)",
-      "Morning Special ( Kolakeda/Ranawara/Belimal)",
-      "Lunch (Fride rice with desart)",
-      "Evining Tea (With Kitul hakuru)",
-      "Dinner (with Hoppers and String Hoppers)",
-      "3rd day",
-      "Breackfast (with Rice/Roti/Kiribath)",
-      "Morning Special ( Kolakeda/Ranawara/Belimal)",
-      "Lunch (Fride rice with desart)",
-    ],
-    images: [
-      {
-        src: worldend,
-        alt: "Mini Worldend",
-        width: "670vh",
-        caption: "Knuckles Mountain Range",
-      },
-      {
-        src: nitroCave,
-        alt: "Nitro Cave",
-        width: "670vh",
-        caption: "Hikking",
-      },
-      {
-        src: dothulugala9,
-        alt: "Dothalugala Mountain",
-        width: "593vh",
-        caption: "Knuckles Mountain Range",
-      },
-      {
-        src: lakegala,
-        alt: "Lakegala Mountain",
-        width: "593vh",
-        caption: "Knuckles Mountain Range",
-      },
-      {
-        src: Sevenwaterfall3,
-        alt: "Seven Water Falls",
-        // width: "400vh",
-        caption: "Water Fall",
-      },
-      {
-        src: Suriyaaranaella3,
-        alt: "Suriya Arana Ella",
-        width: "500vh",
-        caption: "Adventure",
-      },
-      {
-        src: memureElla,
-        alt: "Meemure Ella",
-        caption: "Hikking",
-      },
-    ],
-  },
-];
 
 const Package: React.FC<PackageProps> = (packages) => {
   const { title, frontDescription, index } = packages;
@@ -243,16 +46,33 @@ const Package: React.FC<PackageProps> = (packages) => {
 
   return (
     <Grid item xs={12} md={4}>
-      <Paper
-        className={`packages-root-${index}`}
-        sx={{ backgroundColor: "white" }}
-      >
-        <div className="cover-image"></div>
-        <Grid container direction="row" alignItems="flex-end" p={3}>
-          <Typography variant="h6" fontWeight={600} color={TEXT_COLOR}>
-            {title}
-          </Typography>
+      <div className={`package-cover-image-${index}`}>
+        <Typography
+          variant="h6"
+          fontWeight={600}
+          color="white"
+          sx={{
+            width: "fit-content",
+            px: 2,
+            backgroundColor: "blueviolet",
+            borderRadius: 20,
+          }}
+        >
+          {title}
+        </Typography>
 
+        <Grid
+          container
+          direction="row"
+          alignItems="flex-end"
+          textAlign="center"
+          px={5}
+          pt={3}
+          pb={1}
+          sx={{ backgroundColor: "white", borderRadius: 20 }}
+          component={Paper}
+          mt="80%"
+        >
           <Typography variant="body1" color={TEXT_COLOR}>
             {frontDescription}
           </Typography>
@@ -260,14 +80,16 @@ const Package: React.FC<PackageProps> = (packages) => {
           <Box textAlign="right" width="100%">
             <Button
               variant="text"
-              color="success"
+              sx={{ border: "2px dashed red", borderRadius: 30 }}
+              color="error"
               onClick={() => setOpen(true)}
             >
               Read more
             </Button>
           </Box>
         </Grid>
-      </Paper>
+      </div>
+
       <ModalComponent open={open} packages={packages} onClose={handleClose} />
     </Grid>
   );

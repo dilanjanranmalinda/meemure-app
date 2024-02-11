@@ -5,114 +5,219 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import { Box } from "@mui/material";
+import { Box, Grid, Paper } from "@mui/material";
 import worldend from "../../accets//Images/Miniworldend/worldend.jpg";
-import SevenWaterFall from "../../accets//Images/7waterfall/7waterfall.jpg";
+import SevenWaterFall from "../../accets//Images/7waterfall/7waterfall.JPG";
 import Hikking from "../../accets//Images/Lakegala/Hiking1.jpg";
 import Climbing from "../../accets//Images/Lakegala/climbing.jpg";
 import Night from "../../accets//Images/Lakegala/Night.jpg";
 import "./adventure.scss";
+import { TEXT_COLOR } from "../../accets/app-constants";
 
 const Adventure = () => {
   return (
-    <div className="img-hover-zoom">
-      <Box
+    <Grid container justifyContent="center" spacing={1} p={4}>
+      <Grid
+        item
         display="flex"
+        textAlign="center"
         flexDirection="column"
         justifyContent="center"
-        style={{ marginTop: "15%" }}
+        gap={1}
       >
         <Typography
-          variant="h4"
-          className="title"
-          textAlign="center"
+          variant="h3"
+          width="100%"
+          borderBottom={2}
+          pb={1}
+          mb={2}
+          fontWeight={400}
           color="#37B5B6"
         >
           Most populer adventues for you
         </Typography>
-        <Typography variant="h5" textAlign="center" color="#323232">
-          "Embark on an adventure into the heart of Meemure,
-        </Typography>
-        <Typography variant="h5" textAlign="center" color="#323232">
-          where every trail tells a tale,
-        </Typography>
-        <Typography variant="h5" textAlign="center" color="#323232">
-          and every step leads to a new discovery.
-        </Typography>
-        <Typography variant="h5" textAlign="center" color="#323232">
-          Amidst the lush forests and winding rivers,{" "}
-        </Typography>{" "}
-        <Typography variant="h5" textAlign="center" color="#323232">
-          find the thrill of exploration and the joy of connection with nature's
-          wonders."
-        </Typography>
-      </Box>
 
-      <Box display="flex" flexDirection="row" alignItems="center" marginTop={2}>
-        <Card style={{ width: "20rem", margin: "5px" }}>
-          <img src={Climbing} alt="Image" height="250" />
-
-          <Typography
-            gutterBottom
-            variant="h5"
-            component="div"
-            align="center"
-            style={{ color: "#ffff" }}
-          >
-            Waterfall Climbing
-          </Typography>
-        </Card>
-
-        <Card style={{ width: "20rem", margin: "5px" }}>
-          <img src={SevenWaterFall} alt="Image" height="250" />
-
-          <Typography
-            gutterBottom
-            variant="h5"
-            component="div"
-            align="center"
-            style={{ color: "#ffff" }}
-          >
-            Water Activity
-          </Typography>
-        </Card>
-
-        <Card
-          style={{
-            width: "20rem",
-            margin: "5px",
-            height: "300",
-            maxWidth: "350",
-          }}
+        <Typography
+          className="custom-border-slogan"
+          variant="h6"
+          textAlign="center"
+          color={TEXT_COLOR}
         >
-          <img src={Hikking} alt="Image" height="250" width="350" />
+          "Embark on an adventure into the heart of Meemure, where every trail
+          tells a tale, and every step leads to a new discovery. Amidst the lush
+          forests and winding rivers, find the thrill of exploration and the joy
+          of connection with nature's wonders."
+        </Typography>
+      </Grid>
 
-          <Typography
-            gutterBottom
-            variant="h5"
-            component="div"
-            align="center"
-            style={{ color: "#ffff" }}
+      <Grid container flexDirection="column" marginTop={2} spacing={2} px={4}>
+        <Grid item>
+          <Card
+            style={{
+              width: "100%",
+              display: "flex",
+              backgroundColor: "white",
+            }}
+            elevation={3}
+            className="zoom-adventures"
           >
-            Hiking
-          </Typography>
-        </Card>
+            <img src={Climbing} alt="Image" height="250" />
 
-        <Card style={{ width: "20rem", margin: "5px" }}>
-          <img src={Night} alt="Image" height="250" />
-
-          <Typography
-            gutterBottom
-            variant="h5"
-            component="div"
-            align="center"
-            style={{ color: "#ffff" }}
+            <Grid
+              item
+              display="flex"
+              flexDirection="column"
+              justifyContent="center"
+              alignItems="center"
+              gap={2}
+              px={5}
+            >
+              <Typography
+                variant="h4"
+                align="center"
+                style={{ color: TEXT_COLOR }}
+                fontWeight={500}
+              >
+                Waterfall Climbing
+              </Typography>
+              <Typography
+                variant="h6"
+                align="center"
+                style={{ color: TEXT_COLOR }}
+              >
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus
+                quaerat facere vitae eligendi, cumque assumenda accusantium
+                repudiandae facilis sequi sunt culpa dignissimos pariatur rem
+                illum quidem ipsam modi laboriosam totam.
+              </Typography>
+            </Grid>
+          </Card>
+        </Grid>
+        <Grid item>
+          <Card
+            style={{
+              width: "100%",
+              display: "flex",
+              backgroundColor: "white",
+            }}
+            elevation={3}
+            className="zoom-adventures"
           >
-            Night Camping
-          </Typography>
-        </Card>
-      </Box>
-    </div>
+            <Grid
+              item
+              display="flex"
+              flexDirection="column"
+              justifyContent="center"
+              alignItems="center"
+              gap={2}
+              px={5}
+            >
+              <Typography
+                variant="h4"
+                align="center"
+                style={{ color: TEXT_COLOR }}
+                fontWeight={500}
+              >
+                Water Activity
+              </Typography>
+              <Typography
+                variant="h6"
+                align="center"
+                style={{ color: TEXT_COLOR }}
+              >
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus
+                quaerat facere vitae eligendi, cumque assumenda accusantium
+                repudiandae facilis sequi sunt culpa dignissimos pariatur rem
+                illum quidem ipsam modi laboriosam totam.
+              </Typography>
+            </Grid>
+            <img src={SevenWaterFall} alt="Image" height="251" />
+          </Card>
+        </Grid>
+        <Grid item>
+          <Card
+            style={{
+              width: "100%",
+              display: "flex",
+              backgroundColor: "white",
+            }}
+            elevation={3}
+            className="zoom-adventures"
+          >
+            <img src={Hikking} alt="Image" height="250" />
+            <Grid
+              item
+              display="flex"
+              flexDirection="column"
+              justifyContent="center"
+              alignItems="center"
+              gap={2}
+              px={5}
+            >
+              <Typography
+                variant="h4"
+                align="center"
+                style={{ color: TEXT_COLOR }}
+                fontWeight={500}
+              >
+                Hiking
+              </Typography>
+              <Typography
+                variant="h6"
+                align="center"
+                style={{ color: TEXT_COLOR }}
+              >
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus
+                quaerat facere vitae eligendi, cumque assumenda accusantium
+                repudiandae facilis sequi sunt culpa dignissimos pariatur rem
+                illum quidem ipsam modi laboriosam totam.
+              </Typography>
+            </Grid>
+          </Card>
+        </Grid>
+        <Grid item>
+          <Card
+            style={{
+              width: "100%",
+              display: "flex",
+              backgroundColor: "white",
+            }}
+            elevation={3}
+            className="zoom-adventures"
+          >
+            <Grid
+              item
+              display="flex"
+              flexDirection="column"
+              justifyContent="center"
+              alignItems="center"
+              gap={2}
+              px={5}
+            >
+              <Typography
+                variant="h4"
+                align="center"
+                style={{ color: TEXT_COLOR }}
+                fontWeight={500}
+              >
+                Night Camping
+              </Typography>
+              <Typography
+                variant="h6"
+                align="center"
+                style={{ color: TEXT_COLOR }}
+              >
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus
+                quaerat facere vitae eligendi, cumque assumenda accusantium
+                repudiandae facilis sequi sunt culpa dignissimos pariatur rem
+                illum quidem ipsam modi laboriosam totam.
+              </Typography>
+            </Grid>
+            <img src={Night} alt="Image" height="250" />
+          </Card>
+        </Grid>
+      </Grid>
+    </Grid>
   );
 };
 

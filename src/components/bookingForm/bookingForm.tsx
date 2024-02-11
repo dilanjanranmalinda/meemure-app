@@ -10,6 +10,7 @@ import countries from "country-list";
 import { FormHelperText, Typography } from "@mui/material";
 import { FormInputs } from "./Booking.interface";
 import BookingModal from "../BookingModal";
+import { packages } from "../../pages/Packages/packages.constant";
 
 const BookingForm = ({ date }: any) => {
   const [data, setData] = useState<any | null>(null);
@@ -34,7 +35,7 @@ const BookingForm = ({ date }: any) => {
     }
   }, [date]);
 
-  const [selectedPackage, setSelectedPackage] = useState(false);
+  const [selectedPackage, setSelectedPackage] = useState<null | number>(null);
 
   const onSubmit = (data: FormInputs) => {
     setData(data);
@@ -140,7 +141,7 @@ const BookingForm = ({ date }: any) => {
                   style={{ marginBottom: "2rem" }}
                   onChange={(e) => {
                     setValue("package", e.target.value);
-                    setSelectedPackage(true);
+                    setSelectedPackage(parseInt(e.target.value));
                   }}
                   select
                   label="Package"
@@ -149,38 +150,45 @@ const BookingForm = ({ date }: any) => {
                   error={!!errors.package}
                   helperText={errors.package?.message}
                 >
-                  <MenuItem value="oneday">One Day</MenuItem>
-                  <MenuItem value="twodays">Two Days</MenuItem>
-                  <MenuItem value="threedays">Three Days</MenuItem>
+                  <MenuItem value={0}>One Day</MenuItem>
+                  <MenuItem value={1}>Two Days</MenuItem>
+                  <MenuItem value={2}>Three Days</MenuItem>
                 </TextField>
               )}
             />
           </Grid>
-          {selectedPackage && (
+          {selectedPackage && packages[selectedPackage].places.length !== 0 ? (
             <Grid item xs={12} sm={6}>
               <Controller
                 name="place"
                 control={control}
                 defaultValue=""
-                rules={{ required: "Place is required" }}
+                rules={
+                  selectedPackage !== 0
+                    ? { required: "Place is required" }
+                    : { required: false }
+                }
                 render={({ field }) => (
                   <TextField
                     {...field}
                     style={{ marginBottom: "2rem" }}
                     select
-                    label="Place"
+                    label="Additional Place"
                     variant="filled"
                     fullWidth
                     error={!!errors.place}
                     helperText={errors.place?.message}
                   >
-                    <MenuItem value="7fall">7Fall</MenuItem>
-                    <MenuItem value="meemure">Meemure Village</MenuItem>
+                    {packages[selectedPackage].places.map((place, index) => (
+                      <MenuItem key={index} value={place.alt}>
+                        {place.alt}
+                      </MenuItem>
+                    ))}
                   </TextField>
                 )}
               />
             </Grid>
-          )}
+          ) : null}
         </Grid>
         <Grid container spacing={1}>
           <Grid item xs={12} sm={6}>
