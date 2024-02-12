@@ -157,14 +157,16 @@ const BookingForm = ({ date }: any) => {
               )}
             />
           </Grid>
-          {selectedPackage && packages[selectedPackage].places.length !== 0 ? (
+          {selectedPackage &&
+          packages[selectedPackage].additionalPlaces.length !== 0 ? (
             <Grid item xs={12} sm={6}>
               <Controller
                 name="place"
                 control={control}
                 defaultValue=""
                 rules={
-                  selectedPackage !== 0
+                  selectedPackage &&
+                  packages[selectedPackage].additionalPlaces.length !== 0
                     ? { required: "Place is required" }
                     : { required: false }
                 }
@@ -179,11 +181,13 @@ const BookingForm = ({ date }: any) => {
                     error={!!errors.place}
                     helperText={errors.place?.message}
                   >
-                    {packages[selectedPackage].places.map((place, index) => (
-                      <MenuItem key={index} value={place.alt}>
-                        {place.alt}
-                      </MenuItem>
-                    ))}
+                    {packages[selectedPackage].additionalPlaces.map(
+                      (place, index) => (
+                        <MenuItem key={index} value={place.alt}>
+                          {place.alt}
+                        </MenuItem>
+                      )
+                    )}
                   </TextField>
                 )}
               />

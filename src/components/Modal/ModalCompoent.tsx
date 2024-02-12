@@ -52,7 +52,7 @@ const ModalComponent = ({ open, onClose, packages }: ModalProps) => {
             >
               <ModalImageSlider {...{ images: places }} />
               <ModalDesc {...{ description, items }} />
-              {places && places.length !== 0 && (
+              {additionalPlaces && additionalPlaces.length !== 0 && (
                 <Grid
                   item
                   xs={12}

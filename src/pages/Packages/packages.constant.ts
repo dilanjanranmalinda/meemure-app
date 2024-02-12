@@ -1,6 +1,7 @@
 import Suriyaaranaella3 from "../../accets//Images/Suriyaarana/suriyaaranaElla3.jpg";
 import memureElla from "../../accets//Images/Oyabokkafall/memureElla.jpg";
 import worldend from "../../accets//Images/Miniworldend/worldend.jpg";
+import worldend3 from "../../accets//Images/Miniworldend/worldend3.jpg";
 import nitroCave from "../../accets//Images/Nitrocave/nitroCave.jpg";
 import meemure from "../../accets//Images//Suriyaarana/Meemure.jpg";
 import meemure1 from "../../accets//Images//Suriyaarana/Meemure1.jpg";
@@ -63,7 +64,8 @@ export const packages = [
   },
   {
     title: "Two Days",
-    frontDescription: "Amazing journey through the waterfals of suriaya arana.",
+    frontDescription:
+      "An incredible expedition through the trails and escapades.",
     foriegn: { price: "$80.00", items: ["discount for 5-10 pax $75"] },
     local: {
       price: "Rs.5500.00",
@@ -117,33 +119,24 @@ export const packages = [
     ],
     additionalPlaces: [
       {
-        src: dothulugala9,
-        alt: "Dothalugala Mountain",
+        src: nitroCave,
+        alt: "Nitro Cave",
         width: "700vh",
         caption: "Knuckles Mountain Range",
       },
+
       {
-        src: Sevenwaterfall3,
-        alt: "Seven Water Falls",
-        // width: "400vh",
-        caption: "Water Fall",
-      },
-      {
-        src: Suriyaaranaella3,
-        alt: "Suriya Arana Ella",
-        width: "600vh",
+        src: worldend3,
+        alt: "Mini Worldend",
+        width: "463vh",
         caption: "Adventure",
-      },
-      {
-        src: memureElla,
-        alt: "Meemure Ella",
-        caption: "Hikking",
       },
     ],
   },
   {
     title: "Three days",
-    frontDescription: "Amazing journey through the waterfals of suriaya arana.",
+    frontDescription:
+      "A breathtaking odyssey amidst towering summits and cascading streams.",
     foriegn: {
       price: "$100.00",
       items: ["discount price more than 5pax $95.00"],
@@ -221,47 +214,12 @@ export const packages = [
       },
     ],
     additionalPlaces: [
-      {
-        src: worldend,
-        alt: "Mini Worldend",
-        width: "720vh",
-        caption: "Knuckles Mountain Range",
-      },
-      {
-        src: nitroCave,
-        alt: "Nitro Cave",
-        width: "720vh",
-        caption: "Hikking",
-      },
-      {
-        src: dothulugala9,
-        alt: "Dothalugala Mountain",
-        width: "650vh",
-        caption: "Knuckles Mountain Range",
-      },
-      {
-        src: lakegala,
-        alt: "Lakegala Mountain",
-        width: "650vh",
-        caption: "Knuckles Mountain Range",
-      },
-      {
-        src: Sevenwaterfall3,
-        alt: "Seven Water Falls",
-        // width: "400vh",
-        caption: "Water Fall",
-      },
-      {
-        src: Suriyaaranaella3,
-        alt: "Suriya Arana Ella",
-        width: "600vh",
-        caption: "Adventure",
-      },
-      {
-        src: memureElla,
-        alt: "Meemure Ella",
-        caption: "Hikking",
-      },
+      // {
+      //   src: worldend,
+      //   alt: "Mini Worldend",
+      //   width: "720vh",
+      //   caption: "Knuckles Mountain Range",
+      // },
     ],
   },
 ];

@@ -33,7 +33,9 @@ const Contact = () => {
                 </Typography>
               </Box>
 
-              <Typography variant="h6">@meemurevillagecamping.com </Typography>
+              <Typography variant="h6">
+                contactmeemurevillage@gmail.com
+              </Typography>
             </Box>
           </Grid>
           <Grid item xs={12} md={4}>

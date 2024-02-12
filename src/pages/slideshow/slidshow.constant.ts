@@ -4,18 +4,20 @@ import meemure from "../../accets/meemure.mp4";
 
 export const videos = [
   {
-    title: "Mini Worldsend",
-    description: "Beautiful memure away from the city of 27 km lies 7 falls",
+    title: "Mini Worldend",
+    description:
+      "Mini world’s ends located in the Knuckles region and has the most incredible views.",
     video: minworldsend,
   },
   {
     title: "Nitro Cave",
-    description: "Beautiful memure away from the city of 27 km lies 7 falls",
+    description:
+      "Nitro Cave is located in picturesque village hidden among Meemure's five villages.",
     video: nitrocave,
   },
   {
-    title: "Meemure",
-    description: "Beautiful memure away from the city of 27 km lies 7 falls",
+    title: "Meemure Village",
+    description: "A Hidden Gem in the Knuckles Mountain Range",
     video: meemure,
   },
 ];

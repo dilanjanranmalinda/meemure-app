@@ -1,13 +1,7 @@
-import * as React from "react";
 import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import { Box, Grid, Paper } from "@mui/material";
-import worldend from "../../accets//Images/Miniworldend/worldend.jpg";
-import SevenWaterFall from "../../accets//Images/7waterfall/7waterfall.JPG";
+import { Grid } from "@mui/material";
+import SevenWaterFall from "../../accets//Images/7waterfall/7waterfall.jpg";
 import Hikking from "../../accets//Images/Lakegala/Hiking1.jpg";
 import Climbing from "../../accets//Images/Lakegala/climbing.jpg";
 import Night from "../../accets//Images/Lakegala/Night.jpg";
@@ -61,7 +55,7 @@ const Adventure = () => {
             elevation={3}
             className="zoom-adventures"
           >
-            <img src={Climbing} alt="Image" height="250" />
+            <img src={Climbing} alt="Image1" height="250" />
 
             <Grid
               item
@@ -85,10 +79,10 @@ const Adventure = () => {
                 align="center"
                 style={{ color: TEXT_COLOR }}
               >
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus
-                quaerat facere vitae eligendi, cumque assumenda accusantium
-                repudiandae facilis sequi sunt culpa dignissimos pariatur rem
-                illum quidem ipsam modi laboriosam totam.
+                A daring dance with nature's symphony. As gravity's grip tugs at
+                your adventurous spirit, each step echoes with the rhythm of
+                rushing water. With every ascent, the cascade becomes your
+                canvas, its misty veil a partner in this vertical waltz.
               </Typography>
             </Grid>
           </Card>
@@ -125,13 +119,13 @@ const Adventure = () => {
                 align="center"
                 style={{ color: TEXT_COLOR }}
               >
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus
-                quaerat facere vitae eligendi, cumque assumenda accusantium
-                repudiandae facilis sequi sunt culpa dignissimos pariatur rem
-                illum quidem ipsam modi laboriosam totam.
+                Begin your aqueous adventure in the heart of Meemure village,
+                where the allure of cascading waterfalls beckons. Here, embark
+                on a journey where every step leads you deeper into the embrace
+                of nature's aqueous wonders.
               </Typography>
             </Grid>
-            <img src={SevenWaterFall} alt="Image" height="251" />
+            <img src={SevenWaterFall} alt="Image2" height="251" />
           </Card>
         </Grid>
         <Grid item>
@@ -144,7 +138,7 @@ const Adventure = () => {
             elevation={3}
             className="zoom-adventures"
           >
-            <img src={Hikking} alt="Image" height="250" />
+            <img src={Hikking} alt="Image3" height="250" />
             <Grid
               item
               display="flex"
@@ -167,10 +161,9 @@ const Adventure = () => {
                 align="center"
                 style={{ color: TEXT_COLOR }}
               >
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus
-                quaerat facere vitae eligendi, cumque assumenda accusantium
-                repudiandae facilis sequi sunt culpa dignissimos pariatur rem
-                illum quidem ipsam modi laboriosam totam.
+                Commence on a thrilling expedition through the rugged Nakles
+                Mountain Range in Meemure, where every step is a testament to
+                nature's majesty.
               </Typography>
             </Grid>
           </Card>
@@ -207,13 +200,12 @@ const Adventure = () => {
                 align="center"
                 style={{ color: TEXT_COLOR }}
               >
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus
-                quaerat facere vitae eligendi, cumque assumenda accusantium
-                repudiandae facilis sequi sunt culpa dignissimos pariatur rem
-                illum quidem ipsam modi laboriosam totam.
+                Experience the enchantment of night camping amidst the mystical
+                wilderness of Meemure. As the sun dips below the horizon, the
+                world transforms into a canvas of starlit wonder.
               </Typography>
             </Grid>
-            <img src={Night} alt="Image" height="250" />
+            <img src={Night} alt="Image4" height="250" />
           </Card>
         </Grid>
       </Grid>

@@ -4,7 +4,7 @@ import { FaUserShield, FaRegLightbulb } from "react-icons/fa";
 
 const Services = () => {
   return (
-    <Grid container spacing={4} pt={3}>
+    <Grid container spacing={1} pt={1}>
       <Grid item xs={4}>
         <Card
           elevation={5}
@@ -48,7 +48,7 @@ const Services = () => {
             </Typography>
             <Typography variant="body1" p={1} align="center">
               Your safety is our top priority. We adhere to strict safety to
-              secure adventure experience.
+              secure adventure experience for everyone.
             </Typography>
           </Box>
         </Card>
