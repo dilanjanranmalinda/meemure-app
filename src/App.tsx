@@ -1,3 +1,9 @@
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes
+} from "react-router-dom";
 import {
   ThemeProvider,
   createTheme,
@@ -6,6 +12,8 @@ import {
 import "./App.scss";
 import { BG_COLOR, PAPER_COLOR } from "./accets/app-constants";
 import Layout from "./templetes/layout/layout";
+import AdminLogin from "./components/Admin/adminLogin/AdminLogin"; // Import your AdminLogin component
+import AdminDashboard from "./components/Admin/adminDashboard/AdminDashboard"; // Import your AdminDashboard component
 import CssBaseline from "@mui/material/CssBaseline";
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
@@ -13,13 +21,13 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+
 const darkBlueTheme = createTheme({
   palette: {
     mode: "dark",
     primary: {
       main: "#fff",
     },
-
     background: {
       default: BG_COLOR,
       paper: PAPER_COLOR,
@@ -34,9 +42,13 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <LocalizationProvider dateAdapter={AdapterDayjs}>
-        <div className="App">
-          <Layout />
-        </div>
+        <Router>
+          <Routes>
+            <Route path="/" element={<Layout />} />
+            <Route path="/admin" element={<AdminLogin />} />
+            <Route path="/admin/dashboard" element={<AdminDashboard />} />
+          </Routes>
+        </Router>
       </LocalizationProvider>
     </ThemeProvider>
   );
