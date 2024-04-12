@@ -24,9 +24,9 @@ const AdminDashboard: React.FC = () => {
   const classes = useStyles();
 
   return (
-    <Grid container justifyContent="center">
+    <Grid container justifyContent="center" px={5}>
       <Grid item>
-        <Card className={classes.card}>
+        <Card className={classes.card} style={{backgroundColor:"brown"}}>
           <CardContent>
             <Typography variant="h5" component="h2">
               Booking Count
@@ -61,7 +61,7 @@ const AdminDashboard: React.FC = () => {
           </CardContent>
         </Card>
       </Grid>
-      <Grid item xs={12}>
+      <Grid item xs={12}> 
         <Card>
           <CardContent>
             <Typography variant="h5" component="h2">

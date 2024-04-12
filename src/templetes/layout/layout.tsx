@@ -72,7 +72,7 @@ function Layout() {
         <Grid container justifyContent="center" mt={5}>
           <Slideshow />
         </Grid>
-        <Grid container spacing={2} mt={10}>
+        {/* <Grid container spacing={2} mt={10}>
           <Grid container spacing={2} mx={{ xs: 4, md: 10 }}>
             <Grid item xs={12} id="packages">
               <Typography variant="h3" color={TEXT_COLOR}>
@@ -107,11 +107,11 @@ function Layout() {
               <Contact />
             </Grid>
           </Grid>
-        </Grid>
+        </Grid> */}
 
-        <Grid item xs={12} mt={5} id="contact">
+        {/* <Grid item xs={12} mt={15} id="contact">
           <Footer />
-        </Grid>
+        </Grid> */}
       </Grid>
     </div>
   );

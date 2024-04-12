@@ -45,7 +45,7 @@ const Package: React.FC<PackageProps> = (packages) => {
   };
 
   return (
-    <Grid item xs={12} md={4}>
+    <Grid display="flex" item xs={12} gap={1} md={4}>
       <div className={`package-cover-image-${index}`}>
         <Typography
           variant="h6"
