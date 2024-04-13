@@ -12,7 +12,7 @@ const Booking = () => {
 
   return (
     <Box className="booking-root">
-      <Grid container spacing={2}>
+      <Grid container spacing={5}>
         <Grid item xs={12} md={6}>
           <Paper className="calendar">
             <Typography variant="h5" color="white">
@@ -25,17 +25,20 @@ const Booking = () => {
               Today: {new Date().toDateString()}
             </Typography>
           </Paper>
+        
           <Paper
             sx={{
               backgroundColor: date ? "orange" : "red",
               marginTop: 1,
               padding: 2,
+            width:"100%"  
             }}
+            
           >
             {date ? (
-              <Box display="flex" justifyContent="center" alignItems="center">
+              <Box display="flex"  justifyContent="center" alignItems="center">
                 <Typography color="blue">Check-in Date</Typography>
-                <Typography variant="h4" fontWeight={500} ml={3}>
+                <Typography variant="h4" fontWeight={500} ml={2}>
                   {date?.toDateString()}
                 </Typography>
               </Box>

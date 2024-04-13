@@ -15,6 +15,7 @@ import { TEXT_COLOR } from "../../accets/app-constants";
 import Footer from "../../components/footer/footer";
 import Adventure from "../../pages/Adventure/adventure";
 import Services from "../../pages/Service/services";
+import OurLocation from "../../pages/location/OurLocation";
 
 function Layout() {
   return (
@@ -46,12 +47,20 @@ function Layout() {
         </Grid>
         <Grid container justifyContent="center" mt={5}>
           <Grid item>
-            <IconButton aria-label="youtube" href="#">
+            <IconButton
+              aria-label="youtube"
+              href="https://youtube.com/@meemurevillage9573?si=DgCpWNXr0OFHDnVr"
+              target="_blank"
+            >
               <FaYoutube size={30} color={TEXT_COLOR} />
             </IconButton>
           </Grid>
           <Grid item>
-            <IconButton aria-label="facebook" href="#">
+            <IconButton
+              aria-label="facebook"
+              href="https://www.facebook.com/MeemureVillageCamping?mibextid=LQQJ4d"
+              target="_blank"
+            >
               <GrFacebookOption
                 color={TEXT_COLOR}
                 style={{ fontSize: "2rem" }}
@@ -59,12 +68,20 @@ function Layout() {
             </IconButton>
           </Grid>
           <Grid item>
-            <IconButton aria-label="tiktok" href="#">
+            <IconButton
+              aria-label="tiktok"
+              href="https://www.tiktok.com/@meemure_village?_t=8lUOfonVTMm&_r=1"
+              target="_blank"
+            >
               <FaTiktok color={TEXT_COLOR} size={30} />
             </IconButton>
           </Grid>
           <Grid item>
-            <IconButton aria-label="instagram" href="#">
+            <IconButton
+              aria-label="instagram"
+              href="https://www.instagram.com/meemure_village_srilanka?igsh=MTI3OWZyNWV4cDliNQ%3D%3D&utm_source=qr"
+              target="_blank"
+            >
               <GrInstagram size={30} color={TEXT_COLOR} />
             </IconButton>
           </Grid>
@@ -72,8 +89,8 @@ function Layout() {
         <Grid container justifyContent="center" mt={5}>
           <Slideshow />
         </Grid>
-        {/* <Grid container spacing={2} mt={10}>
-          <Grid container spacing={2} mx={{ xs: 4, md: 10 }}>
+        <Grid container spacing={2} mt={10}>
+          <Grid container spacing={0} mx={{ xs: 4, md: 10 }}>
             <Grid item xs={12} id="packages">
               <Typography variant="h3" color={TEXT_COLOR}>
                 Packages
@@ -95,6 +112,13 @@ function Layout() {
               <Services />
             </Grid>
             <Grid item xs={12} id="about" mt={5}>
+              <Typography mb={5} variant="h3" color={TEXT_COLOR}>
+                Location
+              </Typography>
+
+              <OurLocation />
+            </Grid>
+            <Grid item xs={12} id="about" mt={5}>
               <Typography variant="h3" color={TEXT_COLOR}>
                 About
               </Typography>
@@ -107,11 +131,11 @@ function Layout() {
               <Contact />
             </Grid>
           </Grid>
-        </Grid> */}
+        </Grid>
 
-        {/* <Grid item xs={12} mt={15} id="contact">
+        <Grid item xs={12} mt={5} id="contact">
           <Footer />
-        </Grid> */}
+        </Grid>
       </Grid>
     </div>
   );

@@ -1,13 +1,3 @@
-import Suriyaaranaella3 from "../../accets//Images/Suriyaarana/suriyaaranaElla3.jpg";
-import memureElla from "../../accets//Images/Oyabokkafall/memureElla.jpg";
-import worldend from "../../accets//Images/Miniworldend/worldend.jpg";
-import worldend3 from "../../accets//Images/Miniworldend/worldend3.jpg";
-import nitroCave from "../../accets//Images/Nitrocave/nitroCave.jpg";
-import meemure from "../../accets//Images//Suriyaarana/Meemure.jpg";
-import meemure1 from "../../accets//Images//Suriyaarana/Meemure1.jpg";
-import dothulugala9 from "../../accets//Images//Dothulugala/dothulugala9.jpg";
-import Sevenwaterfall3 from "../../accets//Images//7waterfall/7waterfall3.jpg";
-import lakegala from "../../accets/Images/Lakegala/lakegala-top.webp";
 
 export const packages = [
   {
@@ -36,25 +26,25 @@ export const packages = [
     ],
     places: [
       {
-        src: memureElla,
+        src: "https://firebasestorage.googleapis.com/v0/b/meemure-app.appspot.com/o/assets%2Fimages%2Foyabokkafall%2FmemureElla.jpg?alt=media&token=02e268dd-90c5-491c-8f9d-b0b063df44ca",
         alt: "Meemure Ella",
         width: "720vh",
         caption: "Water Fall",
       },
       {
-        src: Suriyaaranaella3,
+        src: "https://firebasestorage.googleapis.com/v0/b/meemure-app.appspot.com/o/assets%2Fimages%2Fsuriyaarana%2FsuriyaaranaElla3.jpg?alt=media&token=f516e526-91e4-4c26-916a-65257e6176c5",
         alt: "Suriya Arana Ella",
         width: "590vh",
         caption: "Water Fall",
       },
       {
-        src: meemure,
+        src: "https://firebasestorage.googleapis.com/v0/b/meemure-app.appspot.com/o/assets%2Fimages%2Fsuriyaarana%2FMeemure.jpg?alt=media&token=bf1f931b-02c7-4907-9d17-ba3debe5ff93",
         alt: "Meemure Village",
         width: "700vh",
         caption: "Hidden Nature",
       },
       {
-        src: meemure1,
+        src: "https://firebasestorage.googleapis.com/v0/b/meemure-app.appspot.com/o/assets%2Fimages%2Fsuriyaarana%2FMeemure1.jpg?alt=media&token=2371142b-7a16-4026-a67d-b0f326503b18",
         alt: "Meemure Culture",
         width: "650vh",
         caption: "Delicious culture",
@@ -94,39 +84,39 @@ export const packages = [
     ],
     places: [
       {
-        src: dothulugala9,
+        src: "https://firebasestorage.googleapis.com/v0/b/meemure-app.appspot.com/o/assets%2Fimages%2Fdothalugala%2Fdothulugala9.jpg?alt=media&token=32e3308c-fc93-406d-8563-aeb6c946fe76",
         alt: "Dothalugala Mountain",
         width: "700vh",
         caption: "Knuckles Mountain Range",
       },
       {
-        src: Sevenwaterfall3,
+        src: "https://firebasestorage.googleapis.com/v0/b/meemure-app.appspot.com/o/assets%2Fimages%2F7waterfall%2F7waterfall3.jpg?alt=media&token=14d04ba5-4297-4393-ac1c-a2d38000b053",
         alt: "Seven Water Falls",
         // width: "400vh",
         caption: "Water Fall",
       },
       {
-        src: Suriyaaranaella3,
+        src: "https://firebasestorage.googleapis.com/v0/b/meemure-app.appspot.com/o/assets%2Fimages%2Fsuriyaarana%2FsuriyaaranaElla3.jpg?alt=media&token=f516e526-91e4-4c26-916a-65257e6176c5",
         alt: "Suriya Arana Ella",
         width: "600vh",
         caption: "Adventure",
       },
       {
-        src: memureElla,
+        src: "https://firebasestorage.googleapis.com/v0/b/meemure-app.appspot.com/o/assets%2Fimages%2Foyabokkafall%2FmemureElla.jpg?alt=media&token=02e268dd-90c5-491c-8f9d-b0b063df44ca",
         alt: "Meemure Ella",
         caption: "Hikking",
       },
     ],
     additionalPlaces: [
       {
-        src: nitroCave,
+        src: "https://firebasestorage.googleapis.com/v0/b/meemure-app.appspot.com/o/assets%2Fimages%2Fnitrocave%2FnitroCave.jpg?alt=media&token=4fa3aea7-b6c6-43e3-825d-29ea3739051e",
         alt: "Nitro Cave",
         width: "700vh",
         caption: "Knuckles Mountain Range",
       },
 
       {
-        src: worldend3,
+        src: "https://firebasestorage.googleapis.com/v0/b/meemure-app.appspot.com/o/assets%2Fimages%2Fminiworldend%2Fworldend3.jpg?alt=media&token=f70fc2d9-582e-4a63-adb9-d126d07a5eee",
         alt: "Mini Worldend",
         width: "463vh",
         caption: "Adventure",
@@ -172,43 +162,43 @@ export const packages = [
     ],
     places: [
       {
-        src: worldend,
+        src: "https://firebasestorage.googleapis.com/v0/b/meemure-app.appspot.com/o/assets%2Fimages%2Fminiworldend%2Fworldend.jpg?alt=media&token=fd7ce831-8e69-42b0-b3c8-6b50c53b102f",
         alt: "Mini Worldend",
         width: "720vh",
         caption: "Knuckles Mountain Range",
       },
       {
-        src: nitroCave,
+        src: "https://firebasestorage.googleapis.com/v0/b/meemure-app.appspot.com/o/assets%2Fimages%2Fnitrocave%2FnitroCave.jpg?alt=media&token=4fa3aea7-b6c6-43e3-825d-29ea3739051e",
         alt: "Nitro Cave",
         width: "720vh",
         caption: "Hikking",
       },
       {
-        src: dothulugala9,
+        src: "https://firebasestorage.googleapis.com/v0/b/meemure-app.appspot.com/o/assets%2Fimages%2Fdothalugala%2Fdothulugala9.jpg?alt=media&token=32e3308c-fc93-406d-8563-aeb6c946fe76",
         alt: "Dothalugala Mountain",
         width: "650vh",
         caption: "Knuckles Mountain Range",
       },
       {
-        src: lakegala,
+        src: "https://firebasestorage.googleapis.com/v0/b/meemure-app.appspot.com/o/assets%2Fimages%2Flakegala%2Flakegala-top.webp?alt=media&token=08e93d20-3d8c-47d6-baa9-a5cad96c34cf",
         alt: "Lakegala Mountain",
         width: "650vh",
         caption: "Knuckles Mountain Range",
       },
       {
-        src: Sevenwaterfall3,
+        src: "https://firebasestorage.googleapis.com/v0/b/meemure-app.appspot.com/o/assets%2Fimages%2F7waterfall%2F7waterfall3.jpg?alt=media&token=14d04ba5-4297-4393-ac1c-a2d38000b053",
         alt: "Seven Water Falls",
         // width: "400vh",
         caption: "Water Fall",
       },
       {
-        src: Suriyaaranaella3,
+        src: "https://firebasestorage.googleapis.com/v0/b/meemure-app.appspot.com/o/assets%2Fimages%2Fsuriyaarana%2FsuriyaaranaElla3.jpg?alt=media&token=f516e526-91e4-4c26-916a-65257e6176c5",
         alt: "Suriya Arana Ella",
         width: "600vh",
         caption: "Adventure",
       },
       {
-        src: memureElla,
+        src: "https://firebasestorage.googleapis.com/v0/b/meemure-app.appspot.com/o/assets%2Fimages%2Foyabokkafall%2FmemureElla.jpg?alt=media&token=02e268dd-90c5-491c-8f9d-b0b063df44ca",
         alt: "Meemure Ella",
         caption: "Hikking",
       },

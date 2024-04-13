@@ -10,7 +10,7 @@ import IconButton from "@mui/material/IconButton";
 import { AiOutlineMenu, AiOutlineMenuFold } from "react-icons/ai";
 import Drawer from "@mui/material/Drawer";
 import Box from "@mui/material/Box";
-import { useScrollTrigger } from "@mui/material";
+import { Avatar, Grid, useScrollTrigger } from "@mui/material";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
@@ -51,7 +51,10 @@ function Navbar() {
     <div className="drawer" onClick={toggleDrawer} onKeyDown={toggleDrawer}>
       <List>
         <ListItem>
-          Logo
+          <Avatar
+            alt="logo"
+            src="https://firebasestorage.googleapis.com/v0/b/meemure-app.appspot.com/o/assets%2Fimages%2Fmeemurelogo.png?alt=media&token=d114c0c5-161c-4c46-b07a-8358c238de4a"
+          />
           <AiOutlineMenuFold
             style={{ marginLeft: "4rem", marginBottom: "1rem" }}
             onClick={toggleDrawer}
@@ -79,17 +82,22 @@ function Navbar() {
   const trigger = useScrollTrigger();
 
   return (
-    <div className="navbar-root">
+    <div className="navbar-root" style={{ width: "100%" }}>
       <AppBar
         position="fixed"
         sx={{
           boxShadow: "none",
           background: trigger ? "rgba(0,0,0,1)" : "rgba(0,0,0,0.1)",
           transition: "background-color 0.5s ease",
+          width: "100%",
         }}
       >
         <Toolbar
-          sx={{ display: "flex", justifyContent: { xs: "none", md: "center" } }}
+          sx={{
+            display: "flex",
+            justifyContent: { xs: "none", md: "center" },
+            width: "100%",
+          }}
         >
           <IconButton
             edge="start"
@@ -101,7 +109,35 @@ function Navbar() {
           >
             <AiOutlineMenu />
           </IconButton>
-          {navLinksMarkup}
+          <Grid
+            container
+            justifyContent="center"
+            alignItems="center"
+            width="100%"
+          >
+            <Grid item xs={1}>
+              <Box
+                sx={{
+                  flexGrow: 1,
+                  width: "100%",
+                  display: { xs: "none", md: "contents" },
+                }}
+              >
+                <a href="/">
+                  <Avatar
+                    sx={{ mr: "10vw" }}
+                    alt="logo"
+                    src="https://firebasestorage.googleapis.com/v0/b/meemure-app.appspot.com/o/assets%2Fimages%2Fmeemurelogo.png?alt=media&token=d114c0c5-161c-4c46-b07a-8358c238de4a"
+                  />
+                </a>
+              </Box>
+            </Grid>
+
+            <Grid item xs={10} display="flex" justifyContent="center">
+              {navLinksMarkup}
+            </Grid>
+          </Grid>
+          <Grid item xs={1}></Grid>
         </Toolbar>
       </AppBar>
       <Drawer open={open} onClose={() => toggleDrawer()}>

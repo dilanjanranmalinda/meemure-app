@@ -1,10 +1,6 @@
 import Card from "@mui/material/Card";
 import Typography from "@mui/material/Typography";
 import { Grid } from "@mui/material";
-import SevenWaterFall from "../../accets//Images/7waterfall/7waterfall.jpg";
-import Hikking from "../../accets//Images/Lakegala/Hiking1.jpg";
-import Climbing from "../../accets//Images/Lakegala/climbing.jpg";
-import Night from "../../accets//Images/Lakegala/Night.jpg";
 import "./adventure.scss";
 import { TEXT_COLOR } from "../../accets/app-constants";
 
@@ -55,7 +51,7 @@ const Adventure = () => {
             elevation={3}
             className="zoom-adventures"
           >
-            <img src={Climbing} alt="Image1" height="250" />
+            <img src="https://firebasestorage.googleapis.com/v0/b/meemure-app.appspot.com/o/assets%2Fimages%2Flakegala%2Fclimbing.jpg?alt=media&token=b4c89e43-43f0-48e8-886f-3b4229da0c98" alt="Image1" height="250" />
 
             <Grid
               item
@@ -125,7 +121,7 @@ const Adventure = () => {
                 of nature's aqueous wonders.
               </Typography>
             </Grid>
-            <img src={SevenWaterFall} alt="Image2" height="251" />
+            <img src="https://firebasestorage.googleapis.com/v0/b/meemure-app.appspot.com/o/assets%2Fimages%2F7waterfall%2F7waterfall.jpg?alt=media&token=ce5a38a0-73d2-4f05-9d51-96d8bbc614a4" alt="Image2" height="251" />
           </Card>
         </Grid>
         <Grid item>
@@ -138,7 +134,7 @@ const Adventure = () => {
             elevation={3}
             className="zoom-adventures"
           >
-            <img src={Hikking} alt="Image3" height="250" />
+            <img src="https://firebasestorage.googleapis.com/v0/b/meemure-app.appspot.com/o/assets%2Fimages%2Flakegala%2FHiking1.jpg?alt=media&token=7a5fd751-7508-4e04-a162-2e1114d45f2a" alt="Image3" height="250" />
             <Grid
               item
               display="flex"
@@ -205,7 +201,7 @@ const Adventure = () => {
                 world transforms into a canvas of starlit wonder.
               </Typography>
             </Grid>
-            <img src={Night} alt="Image4" height="250" />
+            <img src="https://firebasestorage.googleapis.com/v0/b/meemure-app.appspot.com/o/assets%2Fimages%2Flakegala%2FNight.jpg?alt=media&token=d4c3263a-8350-4e97-b93d-2ccecfb36956" alt="Image4" height="250" />
           </Card>
         </Grid>
       </Grid>

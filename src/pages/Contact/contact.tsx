@@ -6,10 +6,10 @@ import "./contact.scss";
 const Contact = () => {
   return (
     <Box>
-      <Box sx={{ flexGrow: 1 }} mt={5}>
+      <Box  mt={5}>
         <Grid container spacing={2}>
           <Grid item xs={12} md={4}>
-            <Box component={Paper} elevation={5} p={5} className="bounce-paper">
+            <Box component={Paper} elevation={5} p={4} className="bounce-paper">
               <Box display="flex">
                 <BsTelephonePlus size={30} color="lightgreen" />
                 <Typography variant="h6" ml={1} color="orange">
@@ -25,7 +25,7 @@ const Contact = () => {
           </Grid>
 
           <Grid item xs={12} md={4}>
-            <Box component={Paper} elevation={5} p={5} className="bounce-paper">
+            <Box component={Paper} elevation={5} p={4} className="bounce-paper">
               <Box display="flex">
                 <MdAlternateEmail size={30} />
                 <Typography variant="h6" ml={1} color="orange">
@@ -39,7 +39,7 @@ const Contact = () => {
             </Box>
           </Grid>
           <Grid item xs={12} md={4}>
-            <Box component={Paper} elevation={5} p={5} className="bounce-paper">
+            <Box component={Paper} elevation={5} p={4} className="bounce-paper">
               <Box display="flex">
                 <HiOutlineLocationMarker size={30} color="#FB8888" />
                 <Typography variant="h6" ml={1} color="orange">
