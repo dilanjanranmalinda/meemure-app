@@ -15,7 +15,7 @@ const ModalDesc = ({ description, items }: any) => {
                 component: "span",
                 style: { fontWeight: "bold", color: TEXT_COLOR },
               }}
-              primary={`\u2022 ${item}`}
+              primary={`\u2022 ${item.name}`}
             />
           </ListItem>
         ))}

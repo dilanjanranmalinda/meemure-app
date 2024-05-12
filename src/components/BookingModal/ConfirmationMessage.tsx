@@ -1,6 +1,10 @@
 import { Box, Typography, Button } from "@mui/material";
 
-const ConfirmationMessage = ({ referenceNumber, onContactUs }: any) => {
+const ConfirmationMessage = ({
+  referenceNumber,
+  onContactUs,
+  onOnlinePayment,
+}: any) => {
   return (
     <Box textAlign="center" p={3} display="flex" gap={2} flexDirection="column">
       <Typography variant="h3" color="primary">
@@ -19,6 +23,14 @@ const ConfirmationMessage = ({ referenceNumber, onContactUs }: any) => {
         please do not hesitate to contact us. We are here to ensure your
         experience with us is seamless and enjoyable.
       </Typography>
+      <Button
+        variant="contained"
+        color="success"
+        onClick={onOnlinePayment}
+        style={{ marginTop: "20px" }}
+      >
+        Online Payment
+      </Button>
       <Button
         variant="contained"
         color="primary"

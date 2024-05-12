@@ -1,15 +1,21 @@
-
 export const packages = [
   {
     title: "One Day",
     frontDescription: "Amazing journey through the waterfals of suriaya arana.",
-    foriegn: { price: "$50.00", items: ["45% discount for 5-10 pax"] },
+    foriegn: {
+      price: { unit: "$", price: 50.0, name: "$50.00" },
+      items: [{ detail: "45% discount for 5-10 pax", unit: "%", price: 45 }],
+    },
     local: {
-      price: "Rs.3000.00",
+      price: { unit: "Rs.", price: 3000, name: "Rs.3000.00" },
       items: [
-        "5-10 පිරිසක් සඳහා 5% ක වට්ටමක්",
-        "නියාමනවරයෙකු නොමිලේ",
-        "10 වඩා වැඩි පිරිසක් සඳහා Rs.2600.00 ක වට්ටමක්",
+        { detail: "5-10 පිරිසක් සඳහා 5% ක වට්ටමක්", unit: "%", price: 5 },
+        { detail: "නියාමනවරයෙකු නොමිලේ", unit: "", price: null },
+        {
+          detail: "10 වඩා වැඩි පිරිසක් සඳහා Rs.2600.00 ක වට්ටමක්",
+          unit: "Rs.",
+          price: 2600,
+        },
       ],
     },
     additional: [
@@ -56,13 +62,20 @@ export const packages = [
     title: "Two Days",
     frontDescription:
       "An incredible expedition through the trails and escapades.",
-    foriegn: { price: "$80.00", items: ["discount for 5-10 pax $75"] },
+    foriegn: {
+      price: { unit: "$", price: 80.0, name: "$80.00" },
+      items: [{ detail: "discount for 5-10 pax $75", unit: "$", price: 75 }],
+    },
     local: {
-      price: "Rs.5500.00",
+      price: { unit: "Rs.", price: 5500, name: "Rs.5500.00" },
       items: [
-        "discount for 5-15 pax Rs.4500",
-        "discount for 15 more than pax Rs.4200",
-        "Guide free",
+        { detail: "discount for 5-15 pax Rs.4500", unit: "Rs", price: 4500 },
+        {
+          detail: "discount for 15 more than pax Rs.4200",
+          unit: "Rs",
+          price: 4500,
+        },
+        { detail: "Guide free", unit: "", price: null },
       ],
     },
     additional: [
@@ -128,15 +141,25 @@ export const packages = [
     frontDescription:
       "A breathtaking odyssey amidst towering summits and cascading streams.",
     foriegn: {
-      price: "$100.00",
-      items: ["discount price more than 5pax $95.00"],
+      price: { unit: "$", price: 100.0, name: "$100.00" },
+      items: [
+        {
+          detail: "discount price more than 5pax $95.00",
+          unit: "$",
+          price: 95.0,
+        },
+      ],
     },
     local: {
-      price: "Rs.7500.00",
+      price: { unit: "Rs.", price: 7500.0, name: "Rs.7500.00" },
       items: [
-        "discount price more than 5pax Rs.70000.00",
-        "Guide free",
-        "Fire Night and BBQ",
+        {
+          detail: "discount price more than 5pax Rs.7000.00",
+          unit: "Rs",
+          price: 7000,
+        },
+        { detail: "Guide free", unit: "", price: null },
+        { detail: "Fire Night and BBQ", unit: "", price: null },
       ],
     },
     additional: [

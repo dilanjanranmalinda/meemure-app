@@ -1,4 +1,5 @@
 import { Paper, Typography, Grid, Button } from "@mui/material";
+import { displayPrice } from "./booking.utils";
 
 const DisplayData = ({ data, onCancel, onConfirm }: any) => {
   return (
@@ -37,9 +38,20 @@ const DisplayData = ({ data, onCancel, onConfirm }: any) => {
           <Grid item xs={6}>
             <Typography variant="body1">Place: {data.place}</Typography>
           </Grid>
+
           <Grid item xs={6}>
             <Typography variant="body1">
               Check In: {new Date(data.checkIn).toLocaleString()}
+            </Typography>
+          </Grid>
+          <Grid item xs={6}>
+            <Typography variant="body1">
+              Tentative Price:{" "}
+              {displayPrice({
+                packageId: data.package,
+                pax: data.pax,
+                from: data.from,
+              })}
             </Typography>
           </Grid>
         </Grid>

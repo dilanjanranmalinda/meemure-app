@@ -34,8 +34,7 @@ interface PaxProps {
   price: string;
   items: string[];
 }
-
-const Package: React.FC<PackageProps> = (packages) => {
+const Package: React.FC<any> = (packages) => {
   const { title, frontDescription, index } = packages;
 
   const [open, setOpen] = useState<boolean>(false);

@@ -9,6 +9,8 @@ import ConfirmationMessage from "./ConfirmationMessage";
 import { scroller } from "react-scroll";
 import { collection, addDoc } from "firebase/firestore/lite";
 import { db } from "../../firebase.config";
+import { displayPrice } from "./booking.utils";
+import CardUI from "./cardUi/CardUI";
 
 const baseUrl = process.env.REACT_APP_BACKEND_URL;
 
@@ -26,18 +28,27 @@ export default function BookingModal({ data, setData }: any) {
   const [confirm, setConfirm] = useState(false);
   const [isError, setIsError] = useState(false);
   const [referenceNumber, setReferenceNumber] = useState<String | null>(null);
+  const [openPayemnt, setOpenPayment] = useState(false);
 
   const onConfirm = async () => {
     setLoading(true);
+    const sendData = {
+      ...data,
+      TentativePrice: displayPrice({
+        packageId: data.package,
+        pax: data.pax,
+        from: data.from,
+      }),
+    };
     try {
-      const docRef = await addDoc(collection(db, "booking"), data);
+      const docRef = await addDoc(collection(db, "booking"), sendData);
       if (docRef.id) {
         const response = await fetch(baseUrl + "/send-email", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ ...data, referenceNumber: docRef.id }),
+          body: JSON.stringify({ ...sendData, referenceNumber: docRef.id }),
         });
 
         const result = await response.json();
@@ -60,6 +71,7 @@ export default function BookingModal({ data, setData }: any) {
     setConfirm(false);
     setLoading(false);
     setIsError(false);
+    setOpenPayment(false);
   };
 
   const onContactUs = () => {
@@ -68,6 +80,13 @@ export default function BookingModal({ data, setData }: any) {
       smooth: true,
       duration: 500,
     });
+  };
+
+  const onOnlinePayment = () => {
+    setConfirm(false);
+    setLoading(false);
+    setIsError(false);
+    setOpenPayment(true);
   };
 
   return (
@@ -117,14 +136,18 @@ export default function BookingModal({ data, setData }: any) {
               <CircularProgress sx={{ m: 1 }} />
             ) : (
               referenceNumber && (
-                <ConfirmationMessage {...{ referenceNumber, onContactUs }} />
+                <ConfirmationMessage
+                  {...{ referenceNumber, onContactUs, onOnlinePayment }}
+                />
               )
             )}
           </Box>
         )}
-        {!loading && !confirm && data && (
+        {!loading && !confirm && !openPayemnt && data && (
           <DisplayData {...{ onConfirm, data, onCancel: handleClose }} />
         )}
+
+        {openPayemnt && <CardUI handleClose={handleClose} />}
       </Dialog>
     </Fragment>
   );

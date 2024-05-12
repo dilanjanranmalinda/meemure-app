@@ -14,7 +14,7 @@ import ModalPlaceSlider from "./modal-place-slider/ModalPlaceSlider";
 interface ModalProps {
   open: boolean;
   onClose: () => void;
-  packages: PackageProps;
+  packages: any;
 }
 
 const ModalComponent = ({ open, onClose, packages }: ModalProps) => {
