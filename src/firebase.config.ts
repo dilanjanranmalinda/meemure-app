@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { getFirestore } from "firebase/firestore/lite";
+import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
@@ -18,4 +18,4 @@ const db = getFirestore(app);
 const analytics = getAnalytics(app);
 const storage = getStorage(app);
 
-export { app, db, analytics,storage };
+export { app, db, analytics, storage };

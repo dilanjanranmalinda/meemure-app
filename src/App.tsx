@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import {
   ThemeProvider,
   createTheme,
@@ -41,6 +41,7 @@ function App() {
             <Route path="/" element={<Layout />} />
             <Route path="/admin" element={<AdminLogin />} />
             <Route path="/admin/dashboard" element={<Dashboard />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </Router>
       </LocalizationProvider>
