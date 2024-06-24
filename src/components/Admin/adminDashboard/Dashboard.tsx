@@ -25,12 +25,7 @@ import Orders from './Orders';
 function Copyright(props: any) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
+      All Rights Reserved &copy; MeemureCamping - {new Date().getFullYear()}
     </Typography>
   );
 }
@@ -148,7 +143,7 @@ export default function Dashboard() {
           <Divider />
           <List component="nav">
             {mainListItems}
-          
+
           </List>
         </Drawer>
         <Box
