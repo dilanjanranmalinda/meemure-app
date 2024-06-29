@@ -21,6 +21,8 @@ import { mainListItems } from './listItems';
 import Chart from './Chart';
 import Deposits from './Deposits';
 import Orders from './Orders';
+import SLTDAStatistics from './SLTDAStatistics';
+import StatMac from './statMac';
 
 function Copyright(props: any) {
   return (
@@ -171,6 +173,7 @@ export default function Dashboard() {
                     height: 240,
                   }}
                 >
+
                   <Chart />
                 </Paper>
               </Grid>
@@ -191,6 +194,17 @@ export default function Dashboard() {
               <Grid item xs={12}>
                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
                   <Orders />
+                </Paper>
+              </Grid>
+
+              <Grid item xs={12}>
+                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
+                  <SLTDAStatistics />
+                </Paper>
+              </Grid>
+              <Grid item xs={12}>
+                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
+                  <StatMac />
                 </Paper>
               </Grid>
             </Grid>
