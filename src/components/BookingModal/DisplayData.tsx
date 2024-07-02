@@ -2,6 +2,7 @@ import { Paper, Typography, Grid, Button } from "@mui/material";
 import { displayPrice } from "./booking.utils";
 
 const DisplayData = ({ data, onCancel, onConfirm }: any) => {
+  console.log('data', data);
   return (
     <>
       <Typography ml={3} variant="h5">

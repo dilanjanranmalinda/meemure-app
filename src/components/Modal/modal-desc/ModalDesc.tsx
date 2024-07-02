@@ -2,6 +2,7 @@ import { Grid, List, ListItem, ListItemText, Typography } from "@mui/material";
 import { TEXT_COLOR } from "../../../accets/app-constants";
 
 const ModalDesc = ({ description, items }: any) => {
+  console.log('items', items);
   return (
     <Grid item>
       <Typography variant="body1" paragraph color={TEXT_COLOR}>
@@ -15,7 +16,7 @@ const ModalDesc = ({ description, items }: any) => {
                 component: "span",
                 style: { fontWeight: "bold", color: TEXT_COLOR },
               }}
-              primary={`\u2022 ${item.name}`}
+              primary={`\u2022 ${item}`}
             />
           </ListItem>
         ))}

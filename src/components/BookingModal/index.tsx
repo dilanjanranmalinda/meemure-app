@@ -7,7 +7,7 @@ import { AiOutlineCloseCircle } from "react-icons/ai";
 import DisplayData from "./DisplayData";
 import ConfirmationMessage from "./ConfirmationMessage";
 import { scroller } from "react-scroll";
-import { collection, addDoc } from "firebase/firestore/lite";
+import { collection, addDoc } from "firebase/firestore";
 import { db } from "../../firebase.config";
 import { displayPrice } from "./booking.utils";
 import CardUI from "./cardUi/CardUI";

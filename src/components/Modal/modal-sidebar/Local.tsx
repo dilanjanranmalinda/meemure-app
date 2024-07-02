@@ -8,6 +8,7 @@ import {
 } from "@mui/material";
 
 const Local = ({ local }: any) => {
+  console.log('local', local);
   return (
     <Paper sx={{ p: 2, backgroundColor: "darkorange" }}>
       <Typography variant="h5" fontWeight={600}>
@@ -21,14 +22,14 @@ const Local = ({ local }: any) => {
                 component: "span",
                 style: { fontWeight: "bold" },
               }}
-              primary={`\u2022 ${item}`}
+              primary={`\u2022 ${item.detail}`}
             />
           </ListItem>
         ))}
       </List>
       <Box display="flex">
         <Typography variant="h5" className="price">
-          {local.price}
+          {local.price.name}
         </Typography>
         <Typography variant="subtitle1" ml={1}>
           (එක් අයෙකු සඳහා)

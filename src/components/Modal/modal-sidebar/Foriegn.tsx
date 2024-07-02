@@ -21,14 +21,14 @@ const Foriegn = ({ foriegn }: any) => {
                 component: "span",
                 style: { fontWeight: "bold" },
               }}
-              primary={`\u2022 ${item}`}
+              primary={`\u2022 ${item.detail}`}
             />
           </ListItem>
         ))}
       </List>
       <Box display="flex">
         <Typography variant="h5" className="price">
-          {foriegn.price}
+          {foriegn.price.name}
         </Typography>
         <Typography variant="subtitle1" ml={1}>
           (Per person)
